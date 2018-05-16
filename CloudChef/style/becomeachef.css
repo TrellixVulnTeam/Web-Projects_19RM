@@ -1,0 +1,8 @@
+.signup-form{
+    background-color: rgb(240, 238, 238);
+    border-top: 8px solid #feb800;
+}
+input[type=radio]{
+    /* width: 20px;
+    height: 20px; */
+}

@@ -1,0 +1,253 @@
+<main>
+    <link rel="stylesheet" href="../style/addmenu.css">
+    <link rel="stylesheet" href="../lib/datepicker/themes/default.css">
+    <link rel="stylesheet" href="../lib/datepicker/themes/default.date.css">
+    <link rel="stylesheet" href="../lib/web-fonts/css/bootstrap-datepicker.css" />
+    <div class="container">
+        <div class="user-image">
+            <img src="../images/profile/Userdefault.jpg" class="img-fluid user-img wow fadeIn" data-wow-delay="0.2s" alt="Responsive image">
+            <div class="custom-img-caption">
+                <a class="upd-pic" href="#" data-toggle="modal" data-target="#update-img-modal">
+                    <strong>
+                        Update Picture
+                    </strong>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container mb-4 mt-4 wow fadeIn add-menu-form justify-content-center" data-wow-delay=".2s">
+        <div class="row mb-3">
+
+            <div id="addMenu" class="col-md-10 offset-md-1 col-12 col-sm-10 offset-sm-1 py-2">
+                <form class="needs-validation" novalidate>
+                    <h2 class="mb-4">
+                        Enter Dish Details!
+                    </h2>
+                    <div class="form-group">
+                        <label for="dish-img">
+                            <strong>Dish Image</strong>
+                        </label>
+                        <div class="custom-file">
+                            <input type="file" id="dish-img" class="custom-file-input" accept="image/x-png,image/gif,image/jpeg" id="customFile" required>
+                            <label class="custom-file-label" for="customFile">Choose File...</label>
+                            <div class="invalid-feedback">
+                                Please select an image!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div id="dishNameDiv" class="form-group col-md-6">
+                            <input type="text" class="form-control" id="dishName" placeholder="Dish Name" required>
+                            <div class="invalid-feedback">
+                                Please enter dish name!
+                            </div>
+                        </div>
+                        <div id="lastNameDiv" class="form-group col-md-6">
+                            <select class="form-control" id="select-city" required>
+                                <option disabled selected value="">Category</option>
+                                <option value="karachi">Italian</option>
+                                <option value="islamabad">Pakistani</option>
+                                <option value="islamabad">Sea-Food</option>
+                                <option value="islamabad">Chinese</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select dish category!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label>
+                                <strong>Dish Availability:</strong>
+                            </label>
+                            <div class="form-group row">
+                                <div class="col">
+                                    <div class="custom-control custom-checkbox mb-3 custom-control-inline">
+                                        <input type="radio" name="dish-availability" class="custom-control-input" id="specific" required>
+                                        <label class="custom-control-label" for="specific">Specific</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-3 custom-control-inline">
+                                        <input type="radio" name="dish-availability" class="custom-control-input" id="regular" required>
+                                        <label class="custom-control-label" for="regular">Regular</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label>
+                                <strong>Dish Availability: (specific day)</strong>
+                            </label>
+                        </div>
+                        <div class="fieldset__wrapper form-group col-md-6">
+                            <input id="dish-specific" style="background-color:white" class="fieldset__input datepicker form-control" type=text placeholder="  Pick a specific date!">
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <div class="form-group">
+                            <label>
+                                <strong>Dish Availability: (week days)</strong>
+                            </label>
+                            <div class="form-group row">
+                                <div class="col">
+                                    <div class="custom-control custom-checkbox mb-3 custom-control-inline">
+                                        <input type="checkbox" name="dishtype" class="custom-control-input dish-days" id="monday" required>
+                                        <label class="custom-control-label" for="monday">Monday</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-3 custom-control-inline">
+                                        <input type="checkbox" name="dishtype" class="custom-control-input dish-days" id="tuesday" required>
+                                        <label class="custom-control-label" for="tuesday">Tuesday</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-3 custom-control-inline">
+                                        <input type="checkbox" name="dishtype" class="custom-control-input dish-days" id="wednesday" required>
+                                        <label class="custom-control-label" for="wednesday">Wednesday</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-3 custom-control-inline">
+                                        <input type="checkbox" name="dishtype" class="custom-control-input dish-days" id="thursday" required>
+                                        <label class="custom-control-label" for="thursday">Thursday</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-3 custom-control-inline">
+                                        <input type="checkbox" name="dishtype" class="custom-control-input dish-days" id="friday" required>
+                                        <label class="custom-control-label" for="friday">Friday</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-3 custom-control-inline">
+                                        <input type="checkbox" name="dishtype" class="custom-control-input dish-days" id="saturday" required>
+                                        <label class="custom-control-label" for="saturday">Saturday</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-3 custom-control-inline">
+                                        <input type="checkbox" name="dishtype" class="custom-control-input dish-days" id="sunday" required>
+                                        <label class="custom-control-label" for="sunday">Sunday</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label>
+                                <strong>Dish Availability: (in time)</strong>
+                            </label>
+                            <div class="form-group row">
+                                <div class="col">
+                                    <div class="custom-control custom-checkbox mb-3 custom-control-inline">
+                                        <input type="checkbox" name="dishtype" class="custom-control-input" id="breakfast" required>
+                                        <label class="custom-control-label" for="breakfast">Breakfast</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-3 custom-control-inline">
+                                        <input type="checkbox" name="dishtype" class="custom-control-input" id="lunch" required>
+                                        <label class="custom-control-label" for="lunch">Lunch</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-3 custom-control-inline">
+                                        <input type="checkbox" name="dishtype" class="custom-control-input" id="dinner" required>
+                                        <label class="custom-control-label" for="dinner">Dinner</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label>
+                                <strong>Serves: </strong>
+                            </label>
+                            <div class="form-group row">
+                                <div class="col-md-6">
+                                    <select class="form-control" id="measure" required>
+                                        <option disabled selected value="">Measure</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please enter measure value!
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input type="text" class="form-control" id="amount" placeholder="Amount" required>
+                                    <div class="invalid-feedback">
+                                        Please enter amount!
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="form-group col-md-6">
+                                    <div class="form-group row">
+                                        <label for="quantity" class="col-sm-3 col-form-label">Quantity</label>
+                                        <div class="col">
+                                            <input type="text" class="form-control" id="quantity" placeholder="" required>
+                                            <div class="invalid-feedback">
+                                                Please enter quantity!
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <div class="form-group row">
+                                        <label for="rupees" class="col-sm-2 col-form-label">PKR</label>
+                                        <div class="col">
+                                            <input type="text" class="form-control" id="rupees" placeholder="" required>
+                                            <div class="invalid-feedback">
+                                                Please enter total rupees!
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div id="dish-description-div" class="form-group">
+                            <label for="dish-description">
+                                <strong>Dish Description</strong>
+                            </label>
+                            <textarea class="form-control" rows="6" id="dish-description" placeholder="Something about the dish..." style="resize:none"
+                                required></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-warning text-white btn-lg btn-block">Add Dish</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script>window.jQuery || document.write('<script src="tests/jquery.2.0.0.js"><\/script>')</script>
+    <script src="../lib/datepicker/picker.js"></script>
+    <script src="../lib/datepicker/picker.date.js"></script>
+    <script src="../lib/datepicker/picker.time.js"></script>
+    <script src="../lib/datepicker/legacy.js"></script>
+    <script src="../lib/datepicker/datepicker_theme/scripts/demo.js"></script>
+    <script src="../lib/datepicker/datepicker_theme/scripts/rainbow.js"></script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36321179-2']);
+        _gaq.push(['_trackPageview']);
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <script>
+        $('.datepicker').pickadate({
+            min: new Date(),
+        });
+    </script>
+    <script>
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                var forms = document.getElementsByClassName('needs-validation');
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+    <script src="../js/addmenu.js"></script>
+</main>

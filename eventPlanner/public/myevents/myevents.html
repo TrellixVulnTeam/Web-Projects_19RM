@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Prayers</title>
+    <link rel="stylesheet" href="../bootstrap/style.css">
+    
+<script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC-R6fq5fcOX_rtps1xPbKFgDMNWclhNvA",
+    authDomain: "authentication-45142.firebaseapp.com",
+    databaseURL: "https://authentication-45142.firebaseio.com",
+    projectId: "authentication-1083e",
+    storageBucket: "gs://authentication-45142.appspot.com",
+    messagingSenderId: "648492727738"
+  };
+  firebase.initializeApp(config);
+</script>
+</head>
+
+<body>
+    <div id="body" class="container centerDiv jumbotron" style="background-color: rgba(0, 0, 0, 0.45)">
+        <nav id="navBar" class="navbar navbar-dark">
+            <h1 class="display-3" style="text-align: center; color:#749429">Prayers Feed!</h1>    
+            <hr class="my-4">
+            <div>
+                <button class="btn btn-primary" onclick="goBack()">Back</button>
+                <button class="btn btn-outline-danger" onclick="logout()">Logout</button>
+                    </div>
+                </nav>
+    </div>
+    <script src="prayers.js"></script>
+    <script src="../bootstrap/jquery.js"></script>
+    <script src="../bootstrap/popper.js"></script>
+    <script src="../bootstrap/bootstrap.js"></script>
+</body>
+
+</html>

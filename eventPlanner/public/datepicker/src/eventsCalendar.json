@@ -1,0 +1,21 @@
+[
+    {
+        "on": "click",
+        "bind": "handleWindowClick"
+    },
+    {
+        "el": "header",
+        "on": "click",
+        "bind": "handleHeaderClick"
+    },
+    {
+        "el": "thead",
+        "on": "click",
+        "bind": "handleTheadClick"
+    },
+    {
+        "el": "tbody",
+        "on": "click",
+        "bind": "handleTbodyClick"
+    }
+]

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../lib/animate/css/animate.css">
+    <link rel="stylesheet" href="../lib/web-fonts/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../style/master.css">
+    <link rel="stylesheet" href="../style/becomeachef.css">
+    <link rel="stylesheet" href="../style/home.css">
+    <link rel="stylesheet" href="../lib/web-fonts/fonts/css/fontawesome-all.min.css">
+</head>
+
+<body>
+    <header id="header">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-darrk nav-slider">
+            <a class="navbar-brand" href="../master.html">
+                <img src="../images/logo/logowebsite.png" width="150px" class="img">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link custom-navitem" href="../master.html">Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-navitem" href="#" data-toggle="modal" data-target="#signIn">Login</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link custom-navitem" href="#">Become A Chef
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-navitem" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-navitem" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-navitem" href="#">
+                            <img class="custom-cart" src="../images/icon/cart-white.png" alt="Cart" onmouseover="this.src='../images/icon/cart-orange.png'"
+                                onmouseout="this.src='../images/icon/cart-white.png'">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="modal fade" id="signIn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div id="signInBody" class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div id="signInEmailDiv" class="form-group">
+                            <label for="user-email">
+                                <strong>Email address</strong>
+                            </label>
+                            <input type="email" class="form-control" id="user-email" aria-describedby="emailHelp" placeholder="Enter email" required>
+                        </div>
+                        <div class="form-group" id="signInPassDiv">
+                            <label for="user-password">
+                                <strong>Password</strong>
+                            </label>
+                            <input type="password" class="form-control" id="user-password" placeholder="Password" required>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-3">
+                                <label>
+                                    <strong>LogIn As:</strong>
+                                </label>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="chef" value="option1" required>
+                                    <label class="form-check-label" for="chef">Chef</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="user" value="option2" required>
+                                    <label class="form-check-label" for="user">User</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-warning text-white" onclick="signIn()">Submit</button>
+                        <button type="submit" id="register-btn" class="btn btn-warning text-white">Register</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="carouselExampleSlidesOnly">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100 head-img" src="../images/slider.jpg" alt="First slide">
+                <div class="carousel-caption d-block d-md-block custom-head-caption">
+                    <h1 class="custom-heading text wow pulse" data-wow-delay="0.2s">Cook and
+                        <strong>Earn</strong>
+                    </h1>
+                </div>
+                <div class="carousel-caption d-block d-md-block">
+                    <div class="text">
+                        <a href="#header">
+                            <img src="../images/icon/scrolldown_icon.png" class="img-scrolldown-icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main>
+        <div class="container mt-4 mb-4">
+            <div class="row">
+                <div class="col-md-6 col-12">
+                    <h2 class="mb-4">
+                        Becoming a CloudChef!
+                    </h2>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link custom-item active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Why?</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link custom-item" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">How?</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link custom-item" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Works</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content mt-3" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h4>
+                                Why should you become a Cloud Chef?
+                            </h4>
+                            <p>
+                                1) You love to cook! Cooking is your absolute passion and your damn good at it!
+                            </p>
+                            <p>
+                                2) Lots of free time on your hands, why not put your skills to good use?
+                            </p>
+                            <p>
+                                3) Cloud Chef is a hassle-free service that will pick your homemade goodies from your doorstep!
+                            </p>
+                            <p>
+                                4) Cash in on your culinary talent, all from the comfort of your home.
+                            </p>
+                            <p>
+                                5) Easy, quick payment method!
+                            </p>
+                        </div>
+                        <div class="tab-pane fade mt-3" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <h4>
+                                How to become a Chef? Just follow 4 easy steps!
+                            </h4>
+                            <p>
+                                <strong>Step 1) </strong>Fill out our online form
+                            </p>
+                            <p>
+                                <strong>Step 2) </strong>Make something delicious for us to taste!
+                            </p>
+                            <p>
+                                <strong>Step 3) </strong>Pay a minimal registration free
+                            </p>
+                            <p>
+                                <strong>Step 4) </strong>Start cooking!
+                            </p>
+                        </div>
+                        <div class="tab-pane fade mt-3" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                            <h4>
+                                How does CloudChef Work? Easy!
+                            </h4>
+                            <p>
+                                <strong>Step 1) </strong>You tell us what yummy treats you have chosen to make a day before.
+                            </p>
+                            <p>
+                                <strong>Step 2) </strong>Send us a gorgeous picture of your dish.
+                            </p>
+                            <p>
+                                <strong>Step 3) </strong>Tell us what time to pick up your dish.
+                            </p>
+                            <p>
+                                <strong>Step 4) </strong>A rider will come to your doorstep to collect the goods!
+                            </p>
+                            <p>
+                                <strong>Step 5) </strong>Get paid!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="signUpBody" class="col-md-6 col-12 mx-auto py-2 signup-form">
+                    <form>
+                        <h2 class="mb-4">
+                            SingUp Your Details!
+                        </h2>
+                        <p>
+                            And You'll be on your way to becoming a Cloud Chef!
+                        </p>
+                        <div class="form-row">
+                            <div id="firstNameDiv" class="form-group col-md-6">
+                                <input type="text" class="form-control" id="firstName" placeholder="First Name" required>
+                            </div>
+                            <div id="lastNameDiv" class="form-group col-md-6">
+                                <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div id="signUpEmailDiv" class="form-group col-md-6">
+                                <input type="email" class="form-control" id="email" placeholder="Email" required>
+                            </div>
+                            <div id="signUpPassDiv" class="form-group col-md-6">
+                                <input type="password" class="form-control" id="password" placeholder="Password" required>
+                            </div>
+                        </div>
+                        <div id="contactDiv" class="form-group">
+                            <input type="tel" class="form-control" id="num" placeholder="92336-2460227" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="inputAddress" placeholder="Eg. R-118 ABC Residency" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <select class="form-control" id="select-city" required>
+                                    <option disabled selected value="">City</option>
+                                    <option value="karachi">Karachi</option>
+                                    <option value="islamabad">Islamabad</option>
+                                </select>
+
+                            </div>
+                            <div class="form-group col-md-4">
+                                <select id="select-town" class="form-control" required>
+                                    <option disabled selected value="">Select Town</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <select id="inputState" class="form-control" required>
+                                    <option disabled selected value="">Choose...</option>
+                                    <option>...</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12">
+                                <select id="inputState" class="form-control" required>
+                                    <option disabled selected value="">Choose...</option>
+                                    <option>...</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <h4>Do You Already Sell Food?</h4>
+                        </div>
+
+                        <div class="form-group col-sm-6">
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="sell-yes" name="sellOption" class="custom-control-input" required>
+                                <label class="custom-control-label" for="sell-yes">Yes</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="sell-no" name="sellOption" class="custom-control-input" required>
+                                <label class="custom-control-label" for="sell-no">No</label>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-warning text-white btn-lg btn-block" onclick="signUp()">Register</button>
+                        <small id="emailHelp" class="form-text text-muted">By proceeding, I agree that CloudChef or its representatives may contact me by email, phone, or SMS
+                            (including by automatic telephone dialing system) at the email address or number I provide. I
+                            have read and understand and agree to the CloudChef Privacy Policy and Terms and Conditions</small>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+
+    <footer class="footer">
+        <div id="message" class="jumbotron jumbotron-fluid footer-form mb-0">
+            <div id="msgBody" class="container">
+                <h3 class="text-center wow slideInLeft" data-wow-delay="0.2s">
+                    <strong style="color:white">Get in Touch</strong>
+                </h3>
+                <div class="row">
+                    <div class="col-12 col-md-6 wow fadeIn" data-wow-delay="0.2s">
+                        <form>
+                            <div id="msg-userNameDiv" class="form-group">
+                                <label for="msg-userName">
+                                    <strong>Full Name</strong>
+                                </label>
+                                <input type="text" class="form-control" id="msg-userName" aria-describedby="emailHelp" placeholder="Enter Name" required>
+                            </div>
+                            <div id="msg-userMailDiv" class="form-group">
+                                <label for="msg-userMail">
+                                    <strong>Email address</strong>
+                                </label>
+                                <input type="email" class="form-control" id="msg-userMail" aria-describedby="emailHelp" placeholder="Enter email" required>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="col-12 col-md-6 wow fadeIn" data-wow-delay="0.2s">
+                        <form>
+                            <div id="msg-userMsgDiv" class="form-group">
+                                <label for="msg-userMsg">
+                                    <strong>Message</strong>
+                                </label>
+                                <textarea class="form-control" rows="6" id="msg-userMsg" aria-describedby="emailHelp" placeholder="Type your message.." required></textarea>
+                                <!-- <br> -->
+                            </div>
+                            <button type="button" class="btn btn-secondary" onclick="submitMsg()">Send Message</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron jumbotron-fluid mb-0 footer-social">
+            <div class="container text-white">
+                <div class="row">
+                    <div class="col-12 col-sm-4 text-center">
+                        <p> &copy; Cloud Chef. All rights reserved</p>
+                    </div>
+                    <div class="col-12 col-sm-4 text-center">
+                        <p>Call Us:
+                            <a href="tel:03362460227">03362460227</a>
+                        </p>
+                        <p>Email:
+                            <a href="mailto:info@cloudchef.pk">info@cloudchef.pk</a>
+                        </p>
+                    </div>
+                    <div class="col-12 col-sm-4 text-center my-auto">
+                        <a class="btn btn-secondary social-btn fa-btn wow bounceInDown" data-wow-delay="0.2s" href="#" role="button">
+                            <span>
+                                <i class="fab fa-facebook-f" style="width:14px;height:10px;"></i>
+                            </span>
+                        </a>
+                        <a class="btn btn-secondary social-btn insta-btn wow bounceInDown" data-wow-delay="0.3s" href="#" role="button">
+                            <span>
+                                <i class="fab fa-instagram" style="width:14px;height:10px;"></i>
+                            </span>
+                        </a>
+                        <a class="btn btn-secondary social-btn twi-btn wow bounceInDown" data-wow-delay="0.4s" href="#" role="button">
+                            <span>
+                                <i class="fab fa-twitter" style="width:14px;height:10px;"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="../lib/animate/dist/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script src="../lib/web-fonts/js/bootstrap.min.js"></script>
+    <script src="../js/becomachef.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+
+</html>

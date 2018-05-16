@@ -1,0 +1,2269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/animate/css/animate.css">
+    <link rel="stylesheet" href="lib/web-fonts/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/master.css">
+    <link rel="stylesheet" href="style/home.css">
+    <link rel="stylesheet" href="lib/web-fonts/fonts/css/fontawesome-all.min.css">
+</head>
+
+<body>
+    <header id="header">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-darrk nav-slider">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo/logowebsite.png" width="150px" class="img">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link custom-navitem" href="#">Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-navitem" href="#" data-toggle="modal" data-target="#signIn">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-navitem" href="register/becomeachef.html">Become A Chef</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-navitem" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-navitem" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-navitem" href="#">
+                            <img class="custom-cart" src="images/icon/cart-white.png" alt="Cart" onmouseover="this.src='images/icon/cart-orange.png'"
+                                onmouseout="this.src='images/icon/cart-white.png'">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="modal fade" id="signIn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div id="signInBody" class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div id="signInEmailDiv" class="form-group">
+                            <label for="user-email">
+                                <strong>Email address</strong>
+                            </label>
+                            <input type="email" class="form-control" id="user-email" aria-describedby="emailHelp" placeholder="Enter email" required>
+                        </div>
+                        <div class="form-group" id="signInPassDiv">
+                            <label for="user-password">
+                                <strong>Password</strong>
+                            </label>
+                            <input type="password" class="form-control" id="user-password" placeholder="Password" required>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-3">
+                                <label>
+                                    <strong>LogIn As:</strong>
+                                </label>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="chef" value="option1" required>
+                                    <label class="form-check-label" for="chef">Chef</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="user" value="option2" required>
+                                    <label class="form-check-label" for="user">User</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-warning text-white" onclick="signIn()">Submit</button>
+                        <button type="submit" id="register-btn" class="btn btn-warning text-white">Register</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="carouselExampleSlidesOnly">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100 head-img" src="images/bg/slider.jpg" alt="First slide">
+                <div class="carousel-caption d-block d-md-block custom-head-caption">
+                    <h1 class="custom-heading text wow pulse" data-wow-delay="0.2s">Cook and
+                        <strong>Earn</strong>
+                    </h1>
+                </div>
+                <div class="carousel-caption d-block d-md-block">
+                    <div class="text">
+                        <a href="#header">
+                            <img src="images/icon/scrolldown_icon.png" class="img-scrolldown-icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main>
+        <div class="container" id="menu">
+            <div class="mt-4 mb-4 wow slideInLeft" data-wow-delay="0.2s">
+                <h1 class="text-center section-heading">Most
+                    <strong>Popular</strong>
+                </h1>
+                <hr class="custom-hr">
+            </div>
+            <div class="modal fade" id="dishone" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <!-- <div class="row"> -->
+                            <div class="">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Biryani</h5>
+                                <h5 class="modal-title">By: Chef ABC</h5>
+                            </div>
+                            <!-- <div class="col-md-8 col-12">
+                                </div> -->
+                            <!-- </div> -->
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-4 col-12 text-center">
+                                    <img src="images/biryani_650x400_51498460478.jpg" width="200px" height="200px" class="rounded-circle">
+                                    <div class="row">
+                                        <div class="col-md-3 col-3">
+                                            <button id="inc-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-plus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <div class="col-md-6 col-6 text-center mt-2">
+                                            <p>
+                                                <b id="quantity">1</b>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-3 col-3">
+                                            <button id="dec-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-minus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-12">
+                                    <p>
+                                        <span class="text-warning">Price:</span> 500 PKR</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 02</p>
+                                    <p>
+                                        <span class="text-warning">Availability:</span> Pre-order
+                                    </p>
+                                    <p>
+                                        <span class="text-warning">Prep-Time:</span> 5hr</p>
+                                    <p>
+                                        <span class="text-warning">Rupees:</span> 500</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 1 Person</p>
+                                </div>
+                                <div class="col-md-5 col-12">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Dish Description</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Other Dishes</a>
+                                        </li>
+                                        <!-- <li class="nav-item">
+                                            <a class="nav-link custom-item" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Reviews</a>
+                                        </li> -->
+                                    </ul>
+                                    <div class="tab-content mt-3" id="myTabContent">
+                                        <div class="tab-pane fade show active scrollbar scrollbar-primary" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                                        </div>
+                                        <div class="tab-pane fade mt-3 scrollbar scrollbar-primary" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                                        </div>
+                                        <!-- <div class="tab-pane fade mt-3" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                            <h4>
+                                                How does CloudChef Work? Easy!
+                                            </h4>
+                                            <p>
+                                                <strong>Step 1) </strong>You tell us what yummy treats you have chosen to make a day before.
+                                            </p>
+                                            <p>
+                                                <strong>Step 2) </strong>Send us a gorgeous picture of your dish.
+                                            </p>
+                                            <p>
+                                                <strong>Step 3) </strong>Tell us what time to pick up your dish.
+                                            </p>
+                                            <p>
+                                                <strong>Step 4) </strong>A rider will come to your doorstep to collect the goods!
+                                            </p>
+                                            <p>
+                                                <strong>Step 5) </strong>Get paid!
+                                            </p>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="dishtwo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <!-- <div class="row"> -->
+                            <div class="">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Biryani</h5>
+                                <h5 class="modal-title">By: Chef ABC</h5>
+                            </div>
+                            <!-- <div class="col-md-8 col-12">
+                                        </div> -->
+                            <!-- </div> -->
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-4 col-12 text-center">
+                                    <img src="images/biryani_650x400_51498460478.jpg" width="200px" height="200px" class="rounded-circle">
+                                    <div class="row">
+                                        <div class="col-md-3 col-3">
+                                            <button id="inc-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-plus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <div class="col-md-6 col-6 text-center mt-2">
+                                            <p>
+                                                <b id="quantity">1</b>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-3 col-3">
+                                            <button id="dec-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-minus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-12">
+                                    <p>
+                                        <span class="text-warning">Price:</span> 500 PKR</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 02</p>
+                                    <p>
+                                        <span class="text-warning">Availability:</span> Pre-order
+                                    </p>
+                                    <p>
+                                        <span class="text-warning">Prep-Time:</span> 5hr</p>
+                                    <p>
+                                        <span class="text-warning">Rupees:</span> 500</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 1 Person</p>
+                                </div>
+                                <div class="col-md-5 col-12">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Dish Description</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Other Dishes</a>
+                                        </li>
+                                        <!-- <li class="nav-item">
+                                                    <a class="nav-link custom-item" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Reviews</a>
+                                                </li> -->
+                                    </ul>
+                                    <div class="tab-content mt-3" id="myTabContent">
+                                        <div class="tab-pane fade show active scrollbar scrollbar-primary" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                                        </div>
+                                        <div class="tab-pane fade mt-3 scrollbar scrollbar-primary" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                                        </div>
+                                        <!-- <div class="tab-pane fade mt-3" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                                    <h4>
+                                                        How does CloudChef Work? Easy!
+                                                    </h4>
+                                                    <p>
+                                                        <strong>Step 1) </strong>You tell us what yummy treats you have chosen to make a day before.
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 2) </strong>Send us a gorgeous picture of your dish.
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 3) </strong>Tell us what time to pick up your dish.
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 4) </strong>A rider will come to your doorstep to collect the goods!
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 5) </strong>Get paid!
+                                                    </p>
+                                                </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="dishthree" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <!-- <div class="row"> -->
+                            <div class="">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Biryani</h5>
+                                <h5 class="modal-title">By: Chef ABC</h5>
+                            </div>
+                            <!-- <div class="col-md-8 col-12">
+                                        </div> -->
+                            <!-- </div> -->
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-4 col-12 text-center">
+                                    <img src="images/biryani_650x400_51498460478.jpg" width="200px" height="200px" class="rounded-circle">
+                                    <div class="row">
+                                        <div class="col-md-3 col-3">
+                                            <button id="inc-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-plus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <div class="col-md-6 col-6 text-center mt-2">
+                                            <p>
+                                                <b id="quantity">1</b>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-3 col-3">
+                                            <button id="dec-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-minus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-12">
+                                    <p>
+                                        <span class="text-warning">Price:</span> 500 PKR</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 02</p>
+                                    <p>
+                                        <span class="text-warning">Availability:</span> Pre-order
+                                    </p>
+                                    <p>
+                                        <span class="text-warning">Prep-Time:</span> 5hr</p>
+                                    <p>
+                                        <span class="text-warning">Rupees:</span> 500</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 1 Person</p>
+                                </div>
+                                <div class="col-md-5 col-12">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Dish Description</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Other Dishes</a>
+                                        </li>
+                                        <!-- <li class="nav-item">
+                                                    <a class="nav-link custom-item" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Reviews</a>
+                                                </li> -->
+                                    </ul>
+                                    <div class="tab-content mt-3" id="myTabContent">
+                                        <div class="tab-pane fade show active scrollbar scrollbar-primary" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                                        </div>
+                                        <div class="tab-pane fade mt-3 scrollbar scrollbar-primary" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                                        </div>
+                                        <!-- <div class="tab-pane fade mt-3" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                                    <h4>
+                                                        How does CloudChef Work? Easy!
+                                                    </h4>
+                                                    <p>
+                                                        <strong>Step 1) </strong>You tell us what yummy treats you have chosen to make a day before.
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 2) </strong>Send us a gorgeous picture of your dish.
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 3) </strong>Tell us what time to pick up your dish.
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 4) </strong>A rider will come to your doorstep to collect the goods!
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 5) </strong>Get paid!
+                                                    </p>
+                                                </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="dishfour" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <!-- <div class="row"> -->
+                            <div class="">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Biryani</h5>
+                                <h5 class="modal-title">By: Chef ABC</h5>
+                            </div>
+                            <!-- <div class="col-md-8 col-12">
+                                        </div> -->
+                            <!-- </div> -->
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-4 col-12 text-center">
+                                    <img src="images/biryani_650x400_51498460478.jpg" width="200px" height="200px" class="rounded-circle">
+                                    <div class="row">
+                                        <div class="col-md-3 col-3">
+                                            <button id="inc-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-plus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <div class="col-md-6 col-6 text-center mt-2">
+                                            <p>
+                                                <b id="quantity">1</b>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-3 col-3">
+                                            <button id="dec-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-minus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-12">
+                                    <p>
+                                        <span class="text-warning">Price:</span> 500 PKR</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 02</p>
+                                    <p>
+                                        <span class="text-warning">Availability:</span> Pre-order
+                                    </p>
+                                    <p>
+                                        <span class="text-warning">Prep-Time:</span> 5hr</p>
+                                    <p>
+                                        <span class="text-warning">Rupees:</span> 500</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 1 Person</p>
+                                </div>
+                                <div class="col-md-5 col-12">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Dish Description</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Other Dishes</a>
+                                        </li>
+                                        <!-- <li class="nav-item">
+                                                    <a class="nav-link custom-item" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Reviews</a>
+                                                </li> -->
+                                    </ul>
+                                    <div class="tab-content mt-3" id="myTabContent">
+                                        <div class="tab-pane fade show active scrollbar scrollbar-primary" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                                        </div>
+                                        <div class="tab-pane fade mt-3 scrollbar scrollbar-primary" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                                        </div>
+                                        <!-- <div class="tab-pane fade mt-3" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                                    <h4>
+                                                        How does CloudChef Work? Easy!
+                                                    </h4>
+                                                    <p>
+                                                        <strong>Step 1) </strong>You tell us what yummy treats you have chosen to make a day before.
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 2) </strong>Send us a gorgeous picture of your dish.
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 3) </strong>Tell us what time to pick up your dish.
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 4) </strong>A rider will come to your doorstep to collect the goods!
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 5) </strong>Get paid!
+                                                    </p>
+                                                </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="dishfive" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <!-- <div class="row"> -->
+                            <div class="">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Biryani</h5>
+                                <h5 class="modal-title">By: Chef ABC</h5>
+                            </div>
+                            <!-- <div class="col-md-8 col-12">
+                                        </div> -->
+                            <!-- </div> -->
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-4 col-12 text-center">
+                                    <img src="images/biryani_650x400_51498460478.jpg" width="200px" height="200px" class="rounded-circle">
+                                    <div class="row">
+                                        <div class="col-md-3 col-3">
+                                            <button id="inc-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-plus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <div class="col-md-6 col-6 text-center mt-2">
+                                            <p>
+                                                <b id="quantity">1</b>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-3 col-3">
+                                            <button id="dec-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-minus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-12">
+                                    <p>
+                                        <span class="text-warning">Price:</span> 500 PKR</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 02</p>
+                                    <p>
+                                        <span class="text-warning">Availability:</span> Pre-order
+                                    </p>
+                                    <p>
+                                        <span class="text-warning">Prep-Time:</span> 5hr</p>
+                                    <p>
+                                        <span class="text-warning">Rupees:</span> 500</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 1 Person</p>
+                                </div>
+                                <div class="col-md-5 col-12">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Dish Description</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Other Dishes</a>
+                                        </li>
+                                        <!-- <li class="nav-item">
+                                                    <a class="nav-link custom-item" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Reviews</a>
+                                                </li> -->
+                                    </ul>
+                                    <div class="tab-content mt-3" id="myTabContent">
+                                        <div class="tab-pane fade show active scrollbar scrollbar-primary" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                                        </div>
+                                        <div class="tab-pane fade mt-3 scrollbar scrollbar-primary" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                                        </div>
+                                        <!-- <div class="tab-pane fade mt-3" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                                    <h4>
+                                                        How does CloudChef Work? Easy!
+                                                    </h4>
+                                                    <p>
+                                                        <strong>Step 1) </strong>You tell us what yummy treats you have chosen to make a day before.
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 2) </strong>Send us a gorgeous picture of your dish.
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 3) </strong>Tell us what time to pick up your dish.
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 4) </strong>A rider will come to your doorstep to collect the goods!
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 5) </strong>Get paid!
+                                                    </p>
+                                                </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="dishsix" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <!-- <div class="row"> -->
+                            <div class="">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Biryani</h5>
+                                <h5 class="modal-title">By: Chef ABC</h5>
+                            </div>
+                            <!-- <div class="col-md-8 col-12">
+                                        </div> -->
+                            <!-- </div> -->
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-4 col-12 text-center">
+                                    <img src="images/biryani_650x400_51498460478.jpg" width="200px" height="200px" class="rounded-circle">
+                                    <div class="row">
+                                        <div class="col-md-3 col-3">
+                                            <button id="inc-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-plus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <div class="col-md-6 col-6 text-center mt-2">
+                                            <p>
+                                                <b id="quantity">1</b>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-3 col-3">
+                                            <button id="dec-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-minus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-12">
+                                    <p>
+                                        <span class="text-warning">Price:</span> 500 PKR</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 02</p>
+                                    <p>
+                                        <span class="text-warning">Availability:</span> Pre-order
+                                    </p>
+                                    <p>
+                                        <span class="text-warning">Prep-Time:</span> 5hr</p>
+                                    <p>
+                                        <span class="text-warning">Rupees:</span> 500</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 1 Person</p>
+                                </div>
+                                <div class="col-md-5 col-12">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Dish Description</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Other Dishes</a>
+                                        </li>
+                                        <!-- <li class="nav-item">
+                                                    <a class="nav-link custom-item" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Reviews</a>
+                                                </li> -->
+                                    </ul>
+                                    <div class="tab-content mt-3" id="myTabContent">
+                                        <div class="tab-pane fade show active scrollbar scrollbar-primary" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                                        </div>
+                                        <div class="tab-pane fade mt-3 scrollbar scrollbar-primary" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                                        </div>
+                                        <!-- <div class="tab-pane fade mt-3" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                                    <h4>
+                                                        How does CloudChef Work? Easy!
+                                                    </h4>
+                                                    <p>
+                                                        <strong>Step 1) </strong>You tell us what yummy treats you have chosen to make a day before.
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 2) </strong>Send us a gorgeous picture of your dish.
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 3) </strong>Tell us what time to pick up your dish.
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 4) </strong>A rider will come to your doorstep to collect the goods!
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 5) </strong>Get paid!
+                                                    </p>
+                                                </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="dishseven" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <!-- <div class="row"> -->
+                            <div class="">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Biryani</h5>
+                                <h5 class="modal-title">By: Chef ABC</h5>
+                            </div>
+                            <!-- <div class="col-md-8 col-12">
+                                        </div> -->
+                            <!-- </div> -->
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-4 col-12 text-center">
+                                    <img src="images/biryani_650x400_51498460478.jpg" width="200px" height="200px" class="rounded-circle">
+                                    <div class="row">
+                                        <div class="col-md-3 col-3">
+                                            <button id="inc-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-plus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <div class="col-md-6 col-6 text-center mt-2">
+                                            <p>
+                                                <b id="quantity">1</b>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-3 col-3">
+                                            <button id="dec-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-minus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-12">
+                                    <p>
+                                        <span class="text-warning">Price:</span> 500 PKR</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 02</p>
+                                    <p>
+                                        <span class="text-warning">Availability:</span> Pre-order
+                                    </p>
+                                    <p>
+                                        <span class="text-warning">Prep-Time:</span> 5hr</p>
+                                    <p>
+                                        <span class="text-warning">Rupees:</span> 500</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 1 Person</p>
+                                </div>
+                                <div class="col-md-5 col-12">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Dish Description</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Other Dishes</a>
+                                        </li>
+                                        <!-- <li class="nav-item">
+                                                    <a class="nav-link custom-item" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Reviews</a>
+                                                </li> -->
+                                    </ul>
+                                    <div class="tab-content mt-3" id="myTabContent">
+                                        <div class="tab-pane fade show active scrollbar scrollbar-primary" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                                        </div>
+                                        <div class="tab-pane fade mt-3 scrollbar scrollbar-primary" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                                        </div>
+                                        <!-- <div class="tab-pane fade mt-3" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                                    <h4>
+                                                        How does CloudChef Work? Easy!
+                                                    </h4>
+                                                    <p>
+                                                        <strong>Step 1) </strong>You tell us what yummy treats you have chosen to make a day before.
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 2) </strong>Send us a gorgeous picture of your dish.
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 3) </strong>Tell us what time to pick up your dish.
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 4) </strong>A rider will come to your doorstep to collect the goods!
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 5) </strong>Get paid!
+                                                    </p>
+                                                </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="disheight" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <!-- <div class="row"> -->
+                            <div class="">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Biryani</h5>
+                                <h5 class="modal-title">By: Chef ABC</h5>
+                            </div>
+                            <!-- <div class="col-md-8 col-12">
+                                        </div> -->
+                            <!-- </div> -->
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-4 col-12 text-center">
+                                    <img src="images/biryani_650x400_51498460478.jpg" width="200px" height="200px" class="rounded-circle">
+                                    <div class="row">
+                                        <div class="col-md-3 col-3">
+                                            <button id="inc-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-plus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <div class="col-md-6 col-6 text-center mt-2">
+                                            <p>
+                                                <b id="quantity">1</b>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-3 col-3">
+                                            <button id="dec-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-minus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-12">
+                                    <p>
+                                        <span class="text-warning">Price:</span> 500 PKR</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 02</p>
+                                    <p>
+                                        <span class="text-warning">Availability:</span> Pre-order
+                                    </p>
+                                    <p>
+                                        <span class="text-warning">Prep-Time:</span> 5hr</p>
+                                    <p>
+                                        <span class="text-warning">Rupees:</span> 500</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 1 Person</p>
+                                </div>
+                                <div class="col-md-5 col-12">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Dish Description</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Other Dishes</a>
+                                        </li>
+                                        <!-- <li class="nav-item">
+                                                    <a class="nav-link custom-item" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Reviews</a>
+                                                </li> -->
+                                    </ul>
+                                    <div class="tab-content mt-3" id="myTabContent">
+                                        <div class="tab-pane fade show active scrollbar scrollbar-primary" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                                        </div>
+                                        <div class="tab-pane fade mt-3 scrollbar scrollbar-primary" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                                        </div>
+                                        <!-- <div class="tab-pane fade mt-3" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                                    <h4>
+                                                        How does CloudChef Work? Easy!
+                                                    </h4>
+                                                    <p>
+                                                        <strong>Step 1) </strong>You tell us what yummy treats you have chosen to make a day before.
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 2) </strong>Send us a gorgeous picture of your dish.
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 3) </strong>Tell us what time to pick up your dish.
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 4) </strong>A rider will come to your doorstep to collect the goods!
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 5) </strong>Get paid!
+                                                    </p>
+                                                </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="dishnine" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <!-- <div class="row"> -->
+                            <div class="">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Biryani</h5>
+                                <h5 class="modal-title">By: Chef ABC</h5>
+                            </div>
+                            <!-- <div class="col-md-8 col-12">
+                                        </div> -->
+                            <!-- </div> -->
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-4 col-12 text-center">
+                                    <img src="images/biryani_650x400_51498460478.jpg" width="200px" height="200px" class="rounded-circle">
+                                    <div class="row">
+                                        <div class="col-md-3 col-3">
+                                            <button id="inc-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-plus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <div class="col-md-6 col-6 text-center mt-2">
+                                            <p>
+                                                <b id="quantity">1</b>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-3 col-3">
+                                            <button id="dec-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-minus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-12">
+                                    <p>
+                                        <span class="text-warning">Price:</span> 500 PKR</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 02</p>
+                                    <p>
+                                        <span class="text-warning">Availability:</span> Pre-order
+                                    </p>
+                                    <p>
+                                        <span class="text-warning">Prep-Time:</span> 5hr</p>
+                                    <p>
+                                        <span class="text-warning">Rupees:</span> 500</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 1 Person</p>
+                                </div>
+                                <div class="col-md-5 col-12">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Dish Description</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Other Dishes</a>
+                                        </li>
+                                        <!-- <li class="nav-item">
+                                                    <a class="nav-link custom-item" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Reviews</a>
+                                                </li> -->
+                                    </ul>
+                                    <div class="tab-content mt-3" id="myTabContent">
+                                        <div class="tab-pane fade show active scrollbar scrollbar-primary" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                                        </div>
+                                        <div class="tab-pane fade mt-3 scrollbar scrollbar-primary" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                                        </div>
+                                        <!-- <div class="tab-pane fade mt-3" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                                    <h4>
+                                                        How does CloudChef Work? Easy!
+                                                    </h4>
+                                                    <p>
+                                                        <strong>Step 1) </strong>You tell us what yummy treats you have chosen to make a day before.
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 2) </strong>Send us a gorgeous picture of your dish.
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 3) </strong>Tell us what time to pick up your dish.
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 4) </strong>A rider will come to your doorstep to collect the goods!
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 5) </strong>Get paid!
+                                                    </p>
+                                                </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="dishten" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <!-- <div class="row"> -->
+                            <div class="">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Biryani</h5>
+                                <h5 class="modal-title">By: Chef ABC</h5>
+                            </div>
+                            <!-- <div class="col-md-8 col-12">
+                                        </div> -->
+                            <!-- </div> -->
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-4 col-12 text-center">
+                                    <img src="images/biryani_650x400_51498460478.jpg" width="200px" height="200px" class="rounded-circle">
+                                    <div class="row">
+                                        <div class="col-md-3 col-3">
+                                            <button id="inc-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-plus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <div class="col-md-6 col-6 text-center mt-2">
+                                            <p>
+                                                <b id="quantity">1</b>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-3 col-3">
+                                            <button id="dec-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-minus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-12">
+                                    <p>
+                                        <span class="text-warning">Price:</span> 500 PKR</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 02</p>
+                                    <p>
+                                        <span class="text-warning">Availability:</span> Pre-order
+                                    </p>
+                                    <p>
+                                        <span class="text-warning">Prep-Time:</span> 5hr</p>
+                                    <p>
+                                        <span class="text-warning">Rupees:</span> 500</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 1 Person</p>
+                                </div>
+                                <div class="col-md-5 col-12">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Dish Description</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Other Dishes</a>
+                                        </li>
+                                        <!-- <li class="nav-item">
+                                                    <a class="nav-link custom-item" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Reviews</a>
+                                                </li> -->
+                                    </ul>
+                                    <div class="tab-content mt-3" id="myTabContent">
+                                        <div class="tab-pane fade show active scrollbar scrollbar-primary" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                                        </div>
+                                        <div class="tab-pane fade mt-3 scrollbar scrollbar-primary" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                                        </div>
+                                        <!-- <div class="tab-pane fade mt-3" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                                    <h4>
+                                                        How does CloudChef Work? Easy!
+                                                    </h4>
+                                                    <p>
+                                                        <strong>Step 1) </strong>You tell us what yummy treats you have chosen to make a day before.
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 2) </strong>Send us a gorgeous picture of your dish.
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 3) </strong>Tell us what time to pick up your dish.
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 4) </strong>A rider will come to your doorstep to collect the goods!
+                                                    </p>
+                                                    <p>
+                                                        <strong>Step 5) </strong>Get paid!
+                                                    </p>
+                                                </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="disheleven" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <!-- <div class="row"> -->
+                            <div class="">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Biryani</h5>
+                                <h5 class="modal-title">By: Chef ABC</h5>
+                            </div>
+                            <!-- <div class="col-md-8 col-12">
+                                        </div> -->
+                            <!-- </div> -->
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-4 col-12 text-center">
+                                    <img src="images/biryani_650x400_51498460478.jpg" width="200px" height="200px" class="rounded-circle">
+                                    <div class="row">
+                                        <div class="col-md-3 col-3">
+                                            <button id="inc-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-plus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <div class="col-md-6 col-6 text-center mt-2">
+                                            <p>
+                                                <b id="quantity">1</b>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-3 col-3">
+                                            <button id="dec-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-minus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-12">
+                                    <p>
+                                        <span class="text-warning">Price:</span> 500 PKR</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 02</p>
+                                    <p>
+                                        <span class="text-warning">Availability:</span> Pre-order
+                                    </p>
+                                    <p>
+                                        <span class="text-warning">Prep-Time:</span> 5hr</p>
+                                    <p>
+                                        <span class="text-warning">Rupees:</span> 500</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 1 Person</p>
+                                </div>
+                                <div class="col-md-5 col-12">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Dish Description</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Other Dishes</a>
+                                        </li>
+                                        <!-- <li class="nav-item">
+                                                    <a class="nav-link custom-item" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Reviews</a>
+                                                </li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="dishtwelve" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <!-- <div class="row"> -->
+                            <div class="">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Biryani</h5>
+                                <h5 class="modal-title">By: Chef ABC</h5>
+                            </div>
+                            <!-- <div class="col-md-8 col-12">
+                                        </div> -->
+                            <!-- </div> -->
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-4 col-12 text-center">
+                                    <img src="images/biryani_650x400_51498460478.jpg" width="200px" height="200px" class="rounded-circle">
+                                    <div class="row">
+                                        <div class="col-md-3 col-3">
+                                            <button id="inc-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-plus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <div class="col-md-6 col-6 text-center mt-2">
+                                            <p>
+                                                <b id="quantity">1</b>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-3 col-3">
+                                            <button id="dec-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-minus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-12">
+                                    <p>
+                                        <span class="text-warning">Price:</span> 500 PKR</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 02</p>
+                                    <p>
+                                        <span class="text-warning">Availability:</span> Pre-order
+                                    </p>
+                                    <p>
+                                        <span class="text-warning">Prep-Time:</span> 5hr</p>
+                                    <p>
+                                        <span class="text-warning">Rupees:</span> 500</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 1 Person</p>
+                                </div>
+                                <div class="col-md-5 col-12">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Dish Description</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Other Dishes</a>
+                                        </li>
+                                        <!-- <li class="nav-item">
+                                                    <a class="nav-link custom-item" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Reviews</a>
+                                                </li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="dishthirteen" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <!-- <div class="row"> -->
+                            <div class="">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Biryani</h5>
+                                <h5 class="modal-title">By: Chef ABC</h5>
+                            </div>
+                            <!-- <div class="col-md-8 col-12">
+                                        </div> -->
+                            <!-- </div> -->
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-4 col-12 text-center">
+                                    <img src="images/biryani_650x400_51498460478.jpg" width="200px" height="200px" class="rounded-circle">
+                                    <div class="row">
+                                        <div class="col-md-3 col-3">
+                                            <button id="inc-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-plus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <div class="col-md-6 col-6 text-center mt-2">
+                                            <p>
+                                                <b id="quantity">1</b>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-3 col-3">
+                                            <button id="dec-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-minus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-12">
+                                    <p>
+                                        <span class="text-warning">Price:</span> 500 PKR</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 02</p>
+                                    <p>
+                                        <span class="text-warning">Availability:</span> Pre-order
+                                    </p>
+                                    <p>
+                                        <span class="text-warning">Prep-Time:</span> 5hr</p>
+                                    <p>
+                                        <span class="text-warning">Rupees:</span> 500</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 1 Person</p>
+                                </div>
+                                <div class="col-md-5 col-12">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Dish Description</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Other Dishes</a>
+                                        </li>
+                                        <!-- <li class="nav-item">
+                                                    <a class="nav-link custom-item" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Reviews</a>
+                                                </li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="dishfourteen" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <!-- <div class="row"> -->
+                            <div class="">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Biryani</h5>
+                                <h5 class="modal-title">By: Chef ABC</h5>
+                            </div>
+                            <!-- <div class="col-md-8 col-12">
+                                        </div> -->
+                            <!-- </div> -->
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-4 col-12 text-center">
+                                    <img src="images/biryani_650x400_51498460478.jpg" width="200px" height="200px" class="rounded-circle">
+                                    <div class="row">
+                                        <div class="col-md-3 col-3">
+                                            <button id="inc-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-plus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <div class="col-md-6 col-6 text-center mt-2">
+                                            <p>
+                                                <b id="quantity">1</b>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-3 col-3">
+                                            <button id="dec-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-minus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-12">
+                                    <p>
+                                        <span class="text-warning">Price:</span> 500 PKR</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 02</p>
+                                    <p>
+                                        <span class="text-warning">Availability:</span> Pre-order
+                                    </p>
+                                    <p>
+                                        <span class="text-warning">Prep-Time:</span> 5hr</p>
+                                    <p>
+                                        <span class="text-warning">Rupees:</span> 500</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 1 Person</p>
+                                </div>
+                                <div class="col-md-5 col-12">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Dish Description</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Other Dishes</a>
+                                        </li>
+                                        <!-- <li class="nav-item">
+                                                    <a class="nav-link custom-item" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Reviews</a>
+                                                </li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="dishfifteen" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <!-- <div class="row"> -->
+                            <div class="">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Biryani</h5>
+                                <h5 class="modal-title">By: Chef ABC</h5>
+                            </div>
+                            <!-- <div class="col-md-8 col-12">
+                                        </div> -->
+                            <!-- </div> -->
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-4 col-12 text-center">
+                                    <img src="images/biryani_650x400_51498460478.jpg" width="200px" height="200px" class="rounded-circle">
+                                    <div class="row">
+                                        <div class="col-md-3 col-3">
+                                            <button id="inc-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-plus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <div class="col-md-6 col-6 text-center mt-2">
+                                            <p>
+                                                <b id="quantity">1</b>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-3 col-3">
+                                            <button id="dec-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-minus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-12">
+                                    <p>
+                                        <span class="text-warning">Price:</span> 500 PKR</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 02</p>
+                                    <p>
+                                        <span class="text-warning">Availability:</span> Pre-order
+                                    </p>
+                                    <p>
+                                        <span class="text-warning">Prep-Time:</span> 5hr</p>
+                                    <p>
+                                        <span class="text-warning">Rupees:</span> 500</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 1 Person</p>
+                                </div>
+                                <div class="col-md-5 col-12">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Dish Description</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Other Dishes</a>
+                                        </li>
+                                        <!-- <li class="nav-item">
+                                                    <a class="nav-link custom-item" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Reviews</a>
+                                                </li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="dishsixteen" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <!-- <div class="row"> -->
+                            <div class="">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Biryani</h5>
+                                <h5 class="modal-title">By: Chef ABC</h5>
+                            </div>
+                            <!-- <div class="col-md-8 col-12">
+                                        </div> -->
+                            <!-- </div> -->
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-4 col-12 text-center">
+                                    <img src="images/biryani_650x400_51498460478.jpg" width="200px" height="200px" class="rounded-circle">
+                                    <div class="row">
+                                        <div class="col-md-3 col-3">
+                                            <button id="inc-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-plus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <div class="col-md-6 col-6 text-center mt-2">
+                                            <p>
+                                                <b id="quantity">1</b>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-3 col-3">
+                                            <button id="dec-btn-1" class="btn btn-outline-warning social-btn">
+                                                <span>
+                                                    <i class="fas fa-minus" style="width:14px;height:10px;"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-12">
+                                    <p>
+                                        <span class="text-warning">Price:</span> 500 PKR</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 02</p>
+                                    <p>
+                                        <span class="text-warning">Availability:</span> Pre-order
+                                    </p>
+                                    <p>
+                                        <span class="text-warning">Prep-Time:</span> 5hr</p>
+                                    <p>
+                                        <span class="text-warning">Rupees:</span> 500</p>
+                                    <p>
+                                        <span class="text-warning">Serves:</span> 1 Person</p>
+                                </div>
+                                <div class="col-md-5 col-12">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Dish Description</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link custom-item" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Other Dishes</a>
+                                        </li>
+                                        <!-- <li class="nav-item">
+                                                    <a class="nav-link custom-item" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Reviews</a>
+                                                </li> -->
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+
+                <div class="row mb-4 mx-5 wow fadeIn" data-wow-delay="0.2s">
+                    <div class="col-md-3 col-12">
+                        <div class="card custom-card" style="width: 14rem;">
+                            <div id="carouselExampleSlidesOnly" class="carousel slide">
+                                <div class="carousel-inner menu-item-1">
+                                    <div class="carousel-item active item-desc-1">
+                                        <img class="d-block menu-item" style="height: 200px; width: 200px" src="images/slider.jpg" alt="First slide">
+
+                                        <div class="carousel-caption custom-caption">
+                                            <button type="button" class="btn btn-outline-warning custom-btn" style="border-radius:20px" data-toggle="modal" data-target="#dishone">
+                                                <i class="fas fa-expand-arrows-alt" style="width:14px;height:10px;"></i>
+                                            </button>
+                                            <button class="btn btn-outline-warning custom-btn" style="border-radius:20px">
+                                                <i class="fas fa-shopping-cart" style="width:14px;height:10px;"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                            <div class="card-body text-center item-name">
+                                <h4 class="card-text">Dish Name</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3 col-12">
+                        <div class="card custom-card" style="width: 14rem;">
+                            <div id="carouselExampleSlidesOnly" class="carousel slide">
+                                <div class="carousel-inner menu-item-2">
+                                    <div class="carousel-item active item-desc-2">
+                                        <img class="d-block menu-item" style="height: 200px; width: 200px" src="images/slider.jpg" alt="First slide">
+                                        <div class="carousel-caption custom-caption">
+                                            <button type="button" class="btn btn-outline-warning custom-btn" style="border-radius:20px" data-toggle="modal" data-target="#dishtwo">
+                                                <i class="fas fa-expand-arrows-alt" style="width:14px;height:10px;"></i>
+                                            </button>
+                                            <button class="btn btn-outline-warning custom-btn" style="border-radius:20px">
+                                                <i class="fas fa-shopping-cart" style="width:14px;height:10px;"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                            <div class="card-body text-center item-name">
+                                <h4 class="card-text">Dish Name</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3 col-12">
+                        <div class="card custom-card" style="width: 14rem;">
+                            <div id="carouselExampleSlidesOnly" class="carousel slide">
+                                <div class="carousel-inner menu-item-3">
+                                    <div class="carousel-item active item-desc-3">
+                                        <img class="d-block menu-item" style="height: 200px; width: 200px" src="images/slider.jpg" alt="First slide">
+                                        <div class="carousel-caption custom-caption">
+                                            <button type="button" class="btn btn-outline-warning custom-btn" style="border-radius:20px" data-toggle="modal" data-target="#dishthree">
+                                                <i class="fas fa-expand-arrows-alt" style="width:14px;height:10px;"></i>
+                                            </button>
+                                            <button class="btn btn-outline-warning custom-btn" style="border-radius:20px">
+                                                <i class="fas fa-shopping-cart" style="width:14px;height:10px;"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                            <div class="card-body text-center item-name">
+                                <h4 class="card-text">Dish Name</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3 col-12">
+                        <div class="card custom-card" style="width: 14rem;">
+                            <div id="carouselExampleSlidesOnly" class="carousel slide">
+                                <div class="carousel-inner menu-item-4">
+                                    <div class="carousel-item active item-desc-4">
+                                        <img class="d-block menu-item" style="height: 200px; width: 200px" src="images/slider.jpg" alt="First slide">
+                                        <div class="carousel-caption custom-caption">
+                                            <button type="button" class="btn btn-outline-warning custom-btn" style="border-radius:20px" data-toggle="modal" data-target="#dishfour">
+                                                <i class="fas fa-expand-arrows-alt" style="width:14px;height:10px;"></i>
+                                            </button>
+                                            <button class="btn btn-outline-warning custom-btn" style="border-radius:20px">
+                                                <i class="fas fa-shopping-cart" style="width:14px;height:10px;"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                            <div class="card-body text-center item-name">
+                                <h4 class="card-text">Dish Name</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row mb-4 mx-5 wow fadeIn" data-wow-delay="0.2s">
+                    <div class="col-md-3 col-12">
+                        <div class="card custom-card" style="width: 14rem;">
+                            <div id="carouselExampleSlidesOnly" class="carousel slide">
+                                <div class="carousel-inner menu-item-5">
+                                    <div class="carousel-item active item-desc-5">
+                                        <img class="d-block menu-item" style="height: 200px; width: 200px" src="images/slider.jpg" alt="First slide">
+                                        <div class="carousel-caption custom-caption">
+                                            <button type="button" class="btn btn-outline-warning custom-btn" style="border-radius:20px" data-toggle="modal" data-target="#dishfive">
+                                                <i class="fas fa-expand-arrows-alt" style="width:14px;height:10px;"></i>
+                                            </button>
+                                            <button class="btn btn-outline-warning custom-btn" style="border-radius:20px">
+                                                <i class="fas fa-shopping-cart" style="width:14px;height:10px;"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                            <div class="card-body text-center item-name">
+                                <h4 class="card-text">Dish Name</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3 col-12">
+                        <div class="card custom-card" style="width: 14rem;">
+                            <div id="carouselExampleSlidesOnly" class="carousel slide">
+                                <div class="carousel-inner menu-item-6">
+                                    <div class="carousel-item active item-desc-6">
+                                        <img class="d-block menu-item" style="height: 200px; width: 200px" src="images/slider.jpg" alt="First slide">
+                                        <div class="carousel-caption custom-caption">
+                                            <button type="button" class="btn btn-outline-warning custom-btn" style="border-radius:20px" data-toggle="modal" data-target="#dishsix">
+                                                <i class="fas fa-expand-arrows-alt" style="width:14px;height:10px;"></i>
+                                            </button>
+                                            <button class="btn btn-outline-warning custom-btn" style="border-radius:20px">
+                                                <i class="fas fa-shopping-cart" style="width:14px;height:10px;"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                            <div class="card-body text-center item-name">
+                                <h4 class="card-text">Dish Name</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3 col-12">
+                        <div class="card custom-card" style="width: 14rem;">
+                            <div id="carouselExampleSlidesOnly" class="carousel slide">
+                                <div class="carousel-inner menu-item-7">
+                                    <div class="carousel-item active item-desc-7">
+                                        <img class="d-block menu-item" style="height: 200px; width: 200px" src="images/slider.jpg" alt="First slide">
+                                        <div class="carousel-caption custom-caption">
+                                            <button type="button" class="btn btn-outline-warning custom-btn" style="border-radius:20px" data-toggle="modal" data-target="#dishseven">
+                                                <i class="fas fa-expand-arrows-alt" style="width:14px;height:10px;"></i>
+                                            </button>
+                                            <button class="btn btn-outline-warning custom-btn" style="border-radius:20px">
+                                                <i class="fas fa-shopping-cart" style="width:14px;height:10px;"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                            <div class="card-body text-center item-name">
+                                <h4 class="card-text">Dish Name</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3 col-12">
+                        <div class="card custom-card" style="width: 14rem;">
+                            <div id="carouselExampleSlidesOnly" class="carousel slide">
+                                <div class="carousel-inner menu-item-8">
+                                    <div class="carousel-item active item-desc-8">
+                                        <img class="d-block menu-item" style="height: 200px; width: 200px" src="images/slider.jpg" alt="First slide">
+                                        <div class="carousel-caption custom-caption">
+                                            <button type="button" class="btn btn-outline-warning custom-btn" style="border-radius:20px" data-toggle="modal" data-target="#disheight">
+                                                <i class="fas fa-expand-arrows-alt" style="width:14px;height:10px;"></i>
+                                            </button>
+                                            <button class="btn btn-outline-warning custom-btn" style="border-radius:20px">
+                                                <i class="fas fa-shopping-cart" style="width:14px;height:10px;"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                            <div class="card-body text-center item-name">
+                                <h4 class="card-text">Dish Name</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="jumbotron jumbotron-fluid new-items-container">
+            <div class="container">
+                <div class="mt-4 mb-4 wow slideInLeft" data-wow-delay="0.2s">
+                    <h1 class="text-center new-section-heading">What's
+                        <strong>New</strong>
+                    </h1>
+                    <hr class="custom-hr" style="background-color:white">
+                </div>
+                <div class="container">
+
+
+                    <div class="row mb-4 mx-5 wow fadeIn" data-wow-delay="0.2s">
+                        <div class="col-md-3 col-12">
+                            <div class="card custom-card" style="width: 14rem;">
+                                <div id="carouselExampleSlidesOnly" class="carousel slide">
+                                    <div class="carousel-inner menu-item-9">
+                                        <div class="carousel-item active item-desc-9">
+                                            <img class="d-block menu-item" style="height: 200px; width: 200px" src="images/slider.jpg" alt="First slide">
+                                            <div class="carousel-caption custom-caption">
+                                                <button type="button" class="btn btn-outline-warning custom-btn" style="border-radius:20px" data-toggle="modal" data-target="#dishnine">
+                                                    <i class="fas fa-expand-arrows-alt" style="width:14px;height:10px;"></i>
+                                                </button>
+                                                <button class="btn btn-outline-warning custom-btn" style="border-radius:20px">
+                                                    <i class="fas fa-shopping-cart" style="width:14px;height:10px;"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                                <div class="card-body text-center new-item-name">
+                                    <h4 class="card-text">Dish Name</h4>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-3 col-12">
+                            <div class="card custom-card" style="width: 14rem;">
+                                <div id="carouselExampleSlidesOnly" class="carousel slide">
+                                    <div class="carousel-inner menu-item-10">
+                                        <div class="carousel-item active item-desc-10">
+                                            <img class="d-block menu-item" style="height: 200px; width: 200px" src="images/slider.jpg" alt="First slide">
+                                            <div class="carousel-caption custom-caption">
+                                                <button type="button" class="btn btn-outline-warning custom-btn" style="border-radius:20px" data-toggle="modal" data-target="#dishten">
+                                                    <i class="fas fa-expand-arrows-alt" style="width:14px;height:10px;"></i>
+                                                </button>
+                                                <button class="btn btn-outline-warning custom-btn" style="border-radius:20px">
+                                                    <i class="fas fa-shopping-cart" style="width:14px;height:10px;"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                                <div class="card-body text-center new-item-name">
+                                    <h4 class="card-text">Dish Name</h4>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-3 col-12">
+                            <div class="card custom-card" style="width: 14rem;">
+                                <div id="carouselExampleSlidesOnly" class="carousel slide">
+                                    <div class="carousel-inner menu-item-11">
+                                        <div class="carousel-item active item-desc-11">
+                                            <img class="d-block menu-item" style="height: 200px; width: 200px" src="images/slider.jpg" alt="First slide">
+                                            <div class="carousel-caption custom-caption">
+                                                <button type="button" class="btn btn-outline-warning custom-btn" style="border-radius:20px" data-toggle="modal" data-target="#disheleven">
+                                                    <i class="fas fa-expand-arrows-alt" style="width:14px;height:10px;"></i>
+                                                </button>
+                                                <button class="btn btn-outline-warning custom-btn" style="border-radius:20px">
+                                                    <i class="fas fa-shopping-cart" style="width:14px;height:10px;"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                                <div class="card-body text-center new-item-name">
+                                    <h4 class="card-text">Dish Name</h4>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-3 col-12">
+                            <div class="card custom-card" style="width: 14rem;">
+                                <div id="carouselExampleSlidesOnly" class="carousel slide">
+                                    <div class="carousel-inner menu-item-12">
+                                        <div class="carousel-item active item-desc-12">
+                                            <img class="d-block menu-item" style="height: 200px; width: 200px" src="images/slider.jpg" alt="First slide">
+                                            <div class="carousel-caption custom-caption">
+                                                <button type="button" class="btn btn-outline-warning custom-btn" style="border-radius:20px" data-toggle="modal" data-target="#dishtwelve">
+                                                    <i class="fas fa-expand-arrows-alt" style="width:14px;height:10px;"></i>
+                                                </button>
+                                                <button class="btn btn-outline-warning custom-btn" style="border-radius:20px">
+                                                    <i class="fas fa-shopping-cart" style="width:14px;height:10px;"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                                <div class="card-body text-center new-item-name">
+                                    <h4 class="card-text">Dish Name</h4>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row mb-4 mx-5 wow fadeIn" data-wow-delay="0.2s">
+                        <div class="col-md-3 col-12">
+                            <div class="card custom-card" style="width: 14rem;">
+                                <div id="carouselExampleSlidesOnly" class="carousel slide">
+                                    <div class="carousel-inner menu-item-13">
+                                        <div class="carousel-item active item-desc-13">
+                                            <img class="d-block menu-item" style="height: 200px; width: 200px" src="images/slider.jpg" alt="First slide">
+                                            <div class="carousel-caption custom-caption">
+                                                <button type="button" class="btn btn-outline-warning custom-btn" style="border-radius:20px" data-toggle="modal" data-target="#dishthirteen">
+                                                    <i class="fas fa-expand-arrows-alt" style="width:14px;height:10px;"></i>
+                                                </button>
+                                                <button class="btn btn-outline-warning custom-btn" style="border-radius:20px">
+                                                    <i class="fas fa-shopping-cart" style="width:14px;height:10px;"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                                <div class="card-body text-center new-item-name">
+                                    <h4 class="card-text">Dish Name</h4>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-3 col-12">
+                            <div class="card custom-card" style="width: 14rem;">
+                                <div id="carouselExampleSlidesOnly" class="carousel slide">
+                                    <div class="carousel-inner menu-item-14">
+                                        <div class="carousel-item active item-desc-14">
+                                            <img class="d-block menu-item" style="height: 200px; width: 200px" src="images/slider.jpg" alt="First slide">
+                                            <div class="carousel-caption custom-caption">
+                                                <button type="button" class="btn btn-outline-warning custom-btn" style="border-radius:20px" data-toggle="modal" data-target="#dishfourteen">
+                                                    <i class="fas fa-expand-arrows-alt" style="width:14px;height:10px;"></i>
+                                                </button>
+                                                <button class="btn btn-outline-warning custom-btn" style="border-radius:20px">
+                                                    <i class="fas fa-shopping-cart" style="width:14px;height:10px;"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                                <div class="card-body text-center new-item-name">
+                                    <h4 class="card-text">Dish Name</h4>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-3 col-12">
+                            <div class="card custom-card" style="width: 14rem;">
+                                <div id="carouselExampleSlidesOnly" class="carousel slide">
+                                    <div class="carousel-inner menu-item-15">
+                                        <div class="carousel-item active item-desc-15">
+                                            <img class="d-block menu-item" style="height: 200px; width: 200px" src="images/slider.jpg" alt="First slide">
+                                            <div class="carousel-caption custom-caption">
+                                                <button type="button" class="btn btn-outline-warning custom-btn" style="border-radius:20px" data-toggle="modal" data-target="#dishfifteen">
+                                                    <i class="fas fa-expand-arrows-alt" style="width:14px;height:10px;"></i>
+                                                </button>
+                                                <button class="btn btn-outline-warning custom-btn" style="border-radius:20px">
+                                                    <i class="fas fa-shopping-cart" style="width:14px;height:10px;"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                                <div class="card-body text-center new-item-name">
+                                    <h4 class="card-text">Dish Name</h4>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-3 col-12">
+                            <div class="card custom-card" style="width: 14rem;">
+                                <div id="carouselExampleSlidesOnly" class="carousel slide">
+                                    <div class="carousel-inner menu-item-16">
+                                        <div class="carousel-item active item-desc-16">
+                                            <img class="d-block menu-item" style="height: 200px; width: 200px" src="images/slider.jpg" alt="First slide">
+                                            <div class="carousel-caption custom-caption">
+                                                <button type="button" class="btn btn-outline-warning custom-btn" style="border-radius:20px" data-toggle="modal" data-target="#dishsixteen">
+                                                    <i class="fas fa-expand-arrows-alt" style="width:14px;height:10px;"></i>
+                                                </button>
+                                                <button class="btn btn-outline-warning custom-btn" style="border-radius:20px">
+                                                    <i class="fas fa-shopping-cart" style="width:14px;height:10px;"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                                <div class="card-body text-center new-item-name">
+                                    <h4 class="card-text">Dish Name</h4>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="mt-4 mb-4 wow slideInLeft" data-wow-delay="0.2s">
+                <h1 class="text-center section-heading">How it
+                    <strong>Works</strong>
+                </h1>
+                <hr class="custom-hr">
+            </div>
+            <div class="row mb-4 wow fadeIn" data-wow-delay="1s">
+                <div class="col-md-4 text-center">
+                    <a class="btn btn-primary social-btn my-3" style="border-radius:20px" href="#" role="button">
+                        <span>
+                            <i class="fas fa-code" style="width:14px;height:12px"></i>
+                        </span>
+                    </a>
+                    <h2>TITLE</h2>
+                    <p>You can thank all the crazy programming here to this guy.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <a class="btn btn-primary social-btn my-3" style="border-radius:20px" href="#" role="button">
+                        <span>
+                            <i class="fas fa-pencil-alt" style="width:14px;height:10px"></i>
+                        </span>
+                    </a>
+                    <h2>TITLE</h2>
+                    <p>You can thank all the crazy programming here to this guy.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <a class="btn btn-primary social-btn my-3" style="border-radius:20px" href="#" role="button">
+                        <span>
+                            <i class="fab fa-angellist" style="width:14px;height:10px"></i>
+                        </span>
+                    </a>
+                    <h2>TITLE</h2>
+                    <p>You can thank all the crazy programming here to this guy.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="carouselExampleSlidesOnly" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="background-color:#feb800">
+                    <img class="d-block w-100 wow slideInRight" data-wow-delay="0.2s" src="images/bg/bg1.jpg" alt="First slide">
+                    <div class="carousel-caption d-block d-md-block custom-head-pos wow slideInLeft" data-wow-delay="0.2s">
+                        <h1 class="text-center section-heading custom-head-pos">Who We
+                            <strong>Are</strong>
+                            <hr class="custom-hr">
+                        </h1>
+                    </div>
+                    <div class="carousel-caption d-block d-md-block desc-text wow slideInLeft" data-wow-delay="0.2s">
+                        <p class="desc-text" style="color: black">We are a group of students and alumni from IBA Karachi and UBIT Karachi that love coming up with
+                            new ideas! CloudChef is our latest idea which is in line with the digital age where food can
+                            reach your doorstep with the click of a button. In recent times, we have heard of numerous health
+                            issues caused by having unhygienic, greasy, fattening foods filled with preservatives. We, at
+                            CloudChef seek to eradicate these issues by providing a healthy substitute for processed and
+                            overpriced food by providing fresh food made at home by our expert home cooks. We are tapping
+                            into the huge talented pool of cooks in Pakistan whose finger licking treats will surely leave
+                            your tummy satisfied!
+                        </p>
+                    </div>
+                </div>
+                <div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="carouselExampleSlidesOnly" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="images/bg/show-menu_bg.jpg" alt="First slide">
+                    <div class="carousel-caption d-block d-md-block menu-head-pos">
+                        <h1 class="custom-heading text verticalLine wow slideInLeft" data-wow-delay="0.2s">
+                            <hr class="custom-hr mr-0">
+                            <a class="show-menu" href="#menu">SHOW
+                                <strong>MENU</strong>
+                            </a>
+                            <hr class="custom-hr ml-0">
+                        </h1>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+
+    <footer class="footer">
+        <div id="message" class="jumbotron jumbotron-fluid footer-form mb-0">
+            <div id="msgBody" class="container">
+                <h3 class="text-center wow slideInLeft" data-wow-delay="0.2s">
+                    <strong style="color:white">Get in Touch</strong>
+                </h3>
+                <div class="row">
+                    <div class="col-12 col-md-6 wow fadeIn" data-wow-delay="0.2s">
+                        <form>
+                            <div id="msg-userNameDiv" class="form-group">
+                                <label for="msg-userName">
+                                    <strong>Full Name</strong>
+                                </label>
+                                <input type="text" class="form-control" id="msg-userName" aria-describedby="emailHelp" placeholder="Enter Name" required>
+                            </div>
+                            <div id="msg-userMailDiv" class="form-group">
+                                <label for="msg-userMail">
+                                    <strong>Email address</strong>
+                                </label>
+                                <input type="email" class="form-control" id="msg-userMail" aria-describedby="emailHelp" placeholder="Enter email" required>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="col-12 col-md-6 wow fadeIn" data-wow-delay="0.2s">
+                        <form>
+                            <div id="msg-userMsgDiv" class="form-group">
+                                <label for="msg-userMsg">
+                                    <strong>Message</strong>
+                                </label>
+                                <textarea class="form-control" rows="6" id="msg-userMsg" aria-describedby="emailHelp" placeholder="Type your message.." required></textarea>
+                                <!-- <br> -->
+                            </div>
+                            <button type="button" class="btn btn-secondary" onclick="submitMsg()">Send Message</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron jumbotron-fluid mb-0 footer-social">
+            <div class="container text-white">
+                <div class="row">
+                    <div class="col-12 col-sm-4 text-center">
+                        <p> &copy; Cloud Chef. All rights reserved</p>
+                    </div>
+                    <div class="col-12 col-sm-4 text-center">
+                        <p>Call Us:
+                            <a href="tel:03362460227">03362460227</a>
+                        </p>
+                        <p>Email:
+                            <a href="mailto:info@cloudchef.pk">info@cloudchef.pk</a>
+                        </p>
+                    </div>
+                    <div class="col-12 col-sm-4 text-center my-auto">
+                        <a class="btn btn-secondary social-btn fa-btn wow bounceInDown" data-wow-delay="0.2s" href="#" role="button">
+                            <span>
+                                <i class="fab fa-facebook-f" style="width:14px;height:10px;"></i>
+                            </span>
+                        </a>
+                        <a class="btn btn-secondary social-btn insta-btn wow bounceInDown" data-wow-delay="0.3s" href="#" role="button">
+                            <span>
+                                <i class="fab fa-instagram" style="width:14px;height:10px;"></i>
+                            </span>
+                        </a>
+                        <a class="btn btn-secondary social-btn twi-btn wow bounceInDown" data-wow-delay="0.4s" href="#" role="button">
+                            <span>
+                                <i class="fab fa-twitter" style="width:14px;height:10px;"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="lib/animate/dist/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script src="lib/web-fonts/js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

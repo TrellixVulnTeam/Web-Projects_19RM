@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="que">
+        <h1 id="quizName"></h1>
+        <p id="question"></p>
+        <p><input type="radio" name="option" id="option1" onclick="enableButton(true)"><label for="option1" id="label1" ></label></p>
+        <p><input type="radio" name="option" id="option2" onclick="enableButton(true)"><label for="option2" id="label2" ></label></p>
+    </div>
+    <button id="nextButton" onclick="checkAns()" disabled="disabled">Next</button>
+</body>
+    <script src="takequiz.js"></script>
+</html>

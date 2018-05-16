@@ -1,0 +1,143 @@
+{
+    "name": "Hamza Iqbal",
+    "img": "assets/images/profile1.png",
+    "designation": "Junior Web Developer",
+    "email": "hiqbalmallick@gmail.com",
+    "phone": "0332-3703153",
+    "facebook": "@hamzaiqbalmallick",
+    "facebookURL": "https://www.facebook.com/hamzaiqbalmallick",
+    "linkedIn": "@hiqbalmallick",
+    "linkedInURL": "https://www.linkedin.com/in/hiqbalmallick",
+    "github": "@hiqbalmallick",
+    "githubURL": "https://www.github.com/hiqbalmallick",
+    "twitter": "@hiqbalmallick",
+    "twitterURL": "https://www.twitter.com/hiqbalmallick",
+    "experiences": [
+        {
+            "title": "Lead Developer",
+            "period": "2015 - Present",
+            "company": "Startup Hubs, San Francisco",
+            "companyURL": "http://programmingbuddy.club",
+            "details": "Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo."
+        },
+        {
+            "title": "Senior Software Engineer",
+            "period": "2014 - 2015",
+            "company": "Google, London",
+            "companyURL": "http://programmingbuddy.club",
+            "details": "Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo."
+        }
+    ],
+    "projects": [
+        {
+            "name": "nQueen Problem Solver",
+            "url": "#",
+            "detail": "An AI dependant software using multiple Data Structures with OOP"
+        },
+        {
+            "name": "Easy Shopping System",
+            "url": "#",
+            "detail": "An application, developed in Java, designed to help the users to save their time while shopping from home."
+        },
+        {
+            "name": "Dua Application",
+            "url": "https://authentication-1083e.firebaseapp.com",
+            "detail": "A responsive website designed for users to share their prayers with each other."
+        },
+        {
+            "name": "Event Planner",
+            "url": "https://event-planner-45142.firebaseapp.com/",
+            "detail": "A responsive website designed for users to plan and share their upcoming events."
+        },
+        {
+            "name": "Pick One's Brain",
+            "url": "#",
+            "detail": "A quiz game developed in C Language."
+        }
+    ],
+    "skills": [
+        {
+            "name": "JAVA",
+            "percent": "80%"
+        },
+        {
+            "name": "HTML5, CSS3 & Bootstrap",
+            "percent": "99%"
+        },
+        {
+            "name": "Javascript & jQuery",
+            "percent": "90%"
+        },
+        {
+            "name": "React-Redux",
+            "percent": "90%"
+        },
+        {
+            "name": "OOP",
+            "percent": "75%"
+        },
+        {
+            "name": "Firebase",
+            "percent": "70%"
+        }
+    ],
+    "certifications": [
+        {
+            "venue": "AKSC'17",
+            "designation": "Speed Programming",
+            "result": "Participated"
+        },
+        {
+            "venue": "IAESTE'17",
+            "designation": "Logic Quiz",
+            "result": "Participated"
+        },
+        {
+            "venue": "Spectrum'17",
+            "designation": "Speed Debugging",
+            "result": "Participated"
+        },
+        {
+            "venue": "Techfest'17",
+            "designation": "Speed Debugging",
+            "result": "Participated"
+        },
+        {
+            "venue": "Prowars'16",
+            "designation": "Speed Programming",
+            "result": "Participated"
+        }
+    ],
+    "education": [
+        {
+            "degree": "BS in Computer Science",
+            "university": "University of Karachi",
+            "period": "2015 - Present"
+        },
+        {
+            "degree": "HSC in Pre-Engineering",
+            "university": "D.J. Sindh Govt. Science College",
+            "period": "2013-2015"
+        },
+        {
+            "degree": "SSC in Science",
+            "university": "Froebel Grammar Academy",
+            "period": "2011-2013"
+        }
+    ],
+    "languages": [
+        {
+            "name": "Urdu",
+            "details": "Native"
+        },
+        {
+            "name": "English",
+            "details": "Intermediate"
+        }
+    ],
+    "interests": [
+        "Cricket",
+        "Chess",
+        "Coding"
+    ]
+}

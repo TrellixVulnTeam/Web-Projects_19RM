@@ -1,0 +1,11 @@
+const ActionTypes = {
+    USERNAME: 'USERNAME',
+    CURRENTUSER: 'CURRENTUSER',
+    CHANGERECPUID: 'CHANGERECPUID',
+    USER_LOGOUT: 'USER_LOGOUT',
+    ADD_TODO: 'ADD_TODO',
+    UPDATE_TODO: 'UPDATE_TODO',
+    REMOVE_TODO: 'REMOVE_TODO'
+}
+
+export default ActionTypes;

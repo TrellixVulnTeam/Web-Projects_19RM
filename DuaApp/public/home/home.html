@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" href="../bootstrap/style.css">
+    
+<script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC-R6fq5fcOX_rtps1xPbKFgDMNWclhNvA",
+    authDomain: "authentication-1083e.firebaseapp.com",
+    databaseURL: "https://authentication-1083e.firebaseio.com",
+    projectId: "authentication-1083e",
+    storageBucket: "authentication-1083e.appspot.com",
+    messagingSenderId: "648492727738"
+  };
+  firebase.initializeApp(config);
+</script>
+</head>
+
+<body>
+    <div id="body" class="container">
+        <div class="container-fluid" style="background-color: rgba(0, 0, 0, 0.45)">
+            <div>
+                <nav id="navBar" class="navbar navbar-dark">
+                    <span class="h1" class="navbar-brand mb-0" style="color: white" id="userName"></span>
+                    <div>
+                        <button class="btn btn-outline-info" onclick="showPrayers()">Show All Prayers</button>
+                        <button class="btn btn-outline-danger" onclick="logout()">Logout</button>
+
+                    </div>
+                </nav>
+
+
+                <div class="row">
+                    <div class="col-6">
+                            <legend>Profile</legend>
+                            <div class="list-group" >
+                                <li id="user" class="list-group-item" style="font-weight: 500; font-style: italic; color: #222233; background-color: #aaccff" ></li>
+                                <li id="email" class="list-group-item" style="font-weight: 500; font-style: italic; color: #222233;"></li>
+                                <li id="birthday" class="list-group-item" style="font-weight: 500; font-style: italic; color: #222233; background-color: #aaccff"></li>
+                                <li id="gender" class="list-group-item" style="font-weight: 500; font-style: italic; color: #222233;"></li>
+                                <li id="country" class="list-group-item" style="font-weight: 500; font-style: italic; color: #222233; background-color: #aaccff"></li>
+                                <li id="num" class="list-group-item" style="font-weight: 500; font-style: italic; color: #222233;"></li>
+                        </div>
+                        <!-- <button class="btn btn-primary">Edit</button> -->
+                    </div>
+                    <div class="col-6">
+                        <!-- <div id="duaDiv" > -->
+                            <legend>Your Dua Here</legend>
+                            <div id="duaReason" class="form-group">
+                                <!-- <span class="input-group-addon">Pray For</span> -->
+                                <input type="text" class="form-control" id="duaFor" placeholder="For what you're praying?">
+                            </div>
+                            <br>
+                            <div id="duaSection" class="form-group">
+                                <label for="comment">Write Your Pray:</label>
+                                <textarea class="form-control" rows="9" id="dua" placeholder="Enter your pray..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="" class="btn btn-primary" onclick="submitDua()">Submit Dua</button>
+                            </div>
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="home.js"></script>
+        <script src="../bootstrap/jquery.js"></script>
+        <script src="../bootstrap/popper.js"></script>
+        <script src="../bootstrap/bootstrap.js"></script>
+</body>
+
+</html>

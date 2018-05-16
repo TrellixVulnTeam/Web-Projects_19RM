@@ -1,0 +1,6 @@
+.add-menu-form {
+    display: flex;
+    flex: 1 1 auto;
+    background-color: rgb(240, 238, 238);
+    border-top: 8px solid #feb800;
+}

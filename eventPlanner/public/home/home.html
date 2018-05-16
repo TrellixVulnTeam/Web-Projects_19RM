@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link href="../css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="../css/font-awesome.css">
+    <link rel="stylesheet" href="../bootstrap/style.css">
+    
+    <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyC39ZspzHPxVBJk2SP3I0QcIkRBRkS2SO4",
+        authDomain: "event-planner-45142.firebaseapp.com",
+        databaseURL: "https://event-planner-45142.firebaseio.com",
+        projectId: "event-planner-45142",
+        storageBucket: "gs://event-planner-45142.appspot.com/",
+        messagingSenderId: "143825560504"
+      };
+      firebase.initializeApp(config);
+    </script>
+</head>
+<body background="../images/home.jpg">
+    <nav id="header" class="navbar fixed-top navbar-expand-lg navbar-light">
+      <span class="navbar-brand" style="color: white" id="userName"></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul id="sign" class="nav navbar-nav ml-auto my-2">
+              <li class="nav-item">
+                      <a class="nav-link" href="#" data-toggle="modal" data-target="#profile"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Profile</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>Sign Out</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <div class="container">
+        <div class="mainPitch text-center">
+            <div class="m-xl-auto">
+                <ul class="list-group" style="cursor:pointer">
+                    <li class="list-group-item h1 eventsMenu" style="background-color:rgba(0, 0, 0, 0.61)" data-toggle="modal" data-target="#createEvent"><i class="fa fa-calendar-plus-o fa-lg" aria-hidden="true"></i> Create Event</li>
+                    <li class="list-group-item h1 eventsMenu" style="background-color:rgba(0, 0, 0, 0.61)" data-toggle="modal" data-target="#allEvents" onclick="showEvents()"><i class="fa fa-calendar fa-lg" aria-hidden="true"></i> See All Events</li>
+                </ul>
+            </div>
+        </div>
+        </div>
+        <div class="modal fade" id="allEvents" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" data-backdrop="static">
+                <div id="allEventsBody" class="container modal-dialog modal-lg">
+                    <div id="showEventsDiv" class="centerDiv text-center">
+                            <h2 id="eventsHead" class="centerDiv-heading">Upcoming Events</h2>
+                    
+                    
+                            <br id="breakLine">
+                        <button id="eventCloseBtn" class="btn btn-outline-info btn-lg" data-toggle="modal" data-dismiss="modal" onclick="closeEvents()">OK</button>
+                    </div>
+                </div>
+              </div>
+    <div class="modal fade" id="profile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div id="profileBody" class="container modal-dialog">
+            <div class="centerDiv">
+                    <h2 class="centerDiv-heading">User Profile</h2>
+                    <div class="list-group" >
+                        <li id="fullname" class="list-group-item" style="font-weight: 500; font-style: italic; color: #222233; background-color: #aaccff" ></li>
+                        <li id="email" class="list-group-item" style="font-weight: 500; font-style: italic; color: #222233;"></li>
+                        <li id="birthday" class="list-group-item" style="font-weight: 500; font-style: italic; color: #222233; background-color: #aaccff"></li>
+                        <li id="gender" class="list-group-item" style="font-weight: 500; font-style: italic; color: #222233;"></li>
+                        <li id="country" class="list-group-item" style="font-weight: 500; font-style: italic; color: #222233; background-color: #aaccff"></li>
+                        <li id="num" class="list-group-item" style="font-weight: 500; font-style: italic; color: #222233;"></li>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="modal fade" id="createEvent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" data-backdrop="static">
+          <div id="createEventBody" class="container modal-dialog modal-lg">
+                  <div class="centerDiv">
+                      <h2 class="centerDiv-heading text-center"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i> Create Event</h2>
+                      <div id="eventNameDiv" class="form-group">
+                          <label for="eventName" class="col-form-label" >Event Name</label>
+                          <input type="text" class="form-control" id="eventName" placeholder="Event Name" required>
+                      </div>
+                      <div class="form-group">
+                          <label for="dtp_input1" class="col-form-label"><i class="fa fa-clock-o" aria-hidden="true"></i> Date and Timings</label>
+                          <div id="eventDateDiv" class="input-group date form_datetime" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                              <input id="eventDate" class="form-control" type="text" value="" placeholder="Date of Event" readonly required>
+                              <span class="input-group-addon"><i class="fa fa-times" aria-hidden="true"></i></span>
+                              <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                          </div>
+                  <!-- <input type="hidden" id="dtp_input1" value="" /> -->
+                      </div>
+                      <div id="eventContactDiv" class="form-group">
+                          <label for="contact" class="col-form-label"><i class="fa fa-phone" aria-hidden="true"></i> Contact</label>
+                          <input type="text" class="form-control" id="contact" placeholder="Contact Number i.e. (+923121234567)" required>
+                      </div>
+                      <div id="venueDiv" class="form-group">
+                          <label for="venue" class="col-form-label"><i class="fa fa-map-marker" aria-hidden="true"></i> Venue</label>
+                          <input type="text" id="venue" class="form-control" placeholder="Event Venue" required>
+                      </div>
+                      <div class="form-group">
+                            <label for="imgInp" class="col-form-label"><i class="fa fa-picture-o" aria-hidden="true"></i> Image</label>
+                            <div  id="imgDiv" class="input-group">
+                                    
+                                <span class="input-group-addon">
+                                    <span class="btn-file">
+                                        Browse… <input type="file" id="imgInp" accept="image/x-png,image/gif,image/jpeg">
+                                    </span>
+                                </span>
+                                <input type="text" id="imgSrc" class="form-control" readonly>
+                            </div>
+                            <img id='img-upload'/>
+                        </div>
+                  <div class="form-group" id="eventDescDiv">
+                          <label for="eventDesc" class="col-form-label"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Event Description</label>
+                          <textarea name="eventDescription" class="form-control" id="eventDesc" cols="30" rows="10" placeholder="Event Description" required></textarea>
+                    </div>
+                    <button class="btn btn-info" id="eventBtn" onclick="createEventFunc()"><i class="fa fa-check" aria-hidden="true"></i> Submit</button>
+                    <button class="btn btn-secondary float-right" data-toggle="modal" data-dismiss="modal"><i class="fa fa-times-circle"></i> Cancel</button>
+                  </div>
+              </div>
+              </div>
+        </div>
+    <script src="home.js"></script>
+    <script src="../bootstrap/jquery.js"></script>
+    <script src="../bootstrap/popper.js"></script>
+    <script src="../bootstrap/bootstrap.js"></script>
+    <script type="text/javascript" src="../jquery/jquery-1.8.3.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+    <script type="text/javascript">
+        $('.form_datetime').datetimepicker({
+            weekStart: 1,
+            todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 4,
+        forceParse: 0,
+            showMeridian: 1,
+            startDate: new Date()
+        });
+        $(document).ready( function() {
+    $(document).on('change', '.btn-file :file', function() {
+    var input = $(this),
+        label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+    input.trigger('fileselect', [label]);
+    });
+
+    $('.btn-file :file').on('fileselect', function(event, label) {
+        
+        var input = $(this).parents('.input-group').find(':text'),
+            log = label;
+        
+        if( input.length ) {
+            input.val(log);
+        } else {
+            if( log ) alert(log);
+        }
+    
+    });
+    
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function (e) {
+                $('#img-upload').attr('src', e.target.result);
+            }
+            
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#imgInp").change(function(){
+        readURL(this);
+    }); 	
+});
+    </script>
+</body>
+</html>

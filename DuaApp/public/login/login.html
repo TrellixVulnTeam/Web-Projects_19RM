@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="../bootstrap/style.css">
+    
+<script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC-R6fq5fcOX_rtps1xPbKFgDMNWclhNvA",
+    authDomain: "authentication-1083e.firebaseapp.com",
+    databaseURL: "https://authentication-1083e.firebaseio.com",
+    projectId: "authentication-1083e",
+    storageBucket: "authentication-1083e.appspot.com",
+    messagingSenderId: "648492727738"
+  };
+  firebase.initializeApp(config);
+</script>
+</head>
+
+<body>
+    <div id="body" class="container">
+            <h1 class="display-3" style="text-align: center; color:#749429; font-style: italic; font-weight: bolder">Dua Application!</h1>    
+            <hr class="my-4">
+        <div class="centerDiv">
+                <h2 class="centerDiv-heading">Sign In</h2>
+            <div class="form-row">
+                <div id="emailDiv" class="form-group col-md-12">
+                    <label for="signInEmail" class="col-form-label">E-mail</label>
+                    <input type="email" class="form-control" id="signInEmail" placeholder="E-mail" required>
+                </div>
+            </div>
+            <div class="form-row">
+                    <div id="passDiv" class="form-group col-md-12">
+                <label for="signInPassword" class="col-form-label">Password</label>
+                <input type="password" class="form-control" id="signInPassword" placeholder="Password" required>
+            </div>
+            </div>
+            <button class="btn btn-outline-success"  id="submitBtn">SignIn</button>
+            <a class="float-right" onclick="signUp()">Don't have Account?</a>
+        </div>
+    </div>
+    <script src="login.js"></script>
+    <script src="../bootstrap/jquery.js"></script>
+    <script src="../bootstrap/popper.js"></script>
+    <script src="../bootstrap/bootstrap.js"></script>
+</body>
+
+</html>

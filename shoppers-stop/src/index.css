@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.grocery-bg{
+  background-color: rgb(122, 188, 241);
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.shopping-bag-bg{
+  background-color: rgb(247, 185, 72);
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.stats-bg{
+  background-color: rgb(177, 172, 172);
+  margin-left: 10px;
+  margin-right: 10px;
+}

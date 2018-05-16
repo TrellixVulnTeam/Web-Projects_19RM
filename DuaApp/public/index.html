@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="bootstrap/style.css">
+    <link rel="stylesheet" href="datepicker/dist/datepicker.css">
+    <link rel="stylesheet" href="countryselector/build/css/countrySelect.css">
+
+   
+<script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC-R6fq5fcOX_rtps1xPbKFgDMNWclhNvA",
+    authDomain: "authentication-1083e.firebaseapp.com",
+    databaseURL: "https://authentication-1083e.firebaseio.com",
+    projectId: "authentication-1083e",
+    storageBucket: "authentication-1083e.appspot.com",
+    messagingSenderId: "648492727738"
+  };
+  firebase.initializeApp(config);
+</script>
+</head>
+
+<body>
+    <div id="body" class="container">
+        <h1 class="display-3" style="text-align: center; color:#749429; font-style: italic; font-weight: bolder">Dua Application!</h1>    
+        <hr class="my-4">
+        <div class="centerDiv">
+            <h2 class="centerDiv-heading">Sign Up</h2>
+            <div class="form-row">
+            <div id="firstNameDiv" class="form-group col-md-6">
+                <label for="firstName" class="col-form-label" >First Name</label>
+                <input type="text" class="form-control" id="firstName" placeholder="FirstName" required>
+            </div>
+            <div id="lastNameDiv" class="form-group col-md-6">
+                <label for="lastName" class="col-form-label" >Last Name</label>
+                <input type="text" class="form-control" id="lastName" placeholder="LastName" required>
+            </div>
+            </div>
+        <div class="form-row">
+            <div id="emailDiv" class="form-group col-md-6">
+                <label for="email" class="col-form-label" >Email</label>
+                <input type="email" class="form-control" id="email" placeholder="E-mail" required>
+            </div>
+            <div id="passDiv" class="form-group col-md-6">
+                <label for="password" class="col-form-label" >Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password" required>
+            </div>
+        </div>
+        <div class="form-row">
+                        <div id="birthdayDiv" class="form-group col-md-6">
+                        <label for="birthday" class="col-form-label">Date of Birth</label>
+                        <input name="date" class="form-control" id="birthday" placeholder="Date of Birth" required readonly/>                        
+                      </div>
+            <div id="genderDiv" class="col-md-6 custom-controls-stacked d-block my-3">
+                <br>
+                    <label class="custom-control custom-radio">
+                      <input id="male" name="radio-stacked" value="Male" type="radio" class="custom-control-input" required>
+                      <span class="custom-control-indicator"></span>
+                      <span class="custom-control-description">Male</span>
+                    </label>
+                    <label class="custom-control custom-radio">
+                      <input id="female" name="radio-stacked" value="Female" type="radio" class="custom-control-input" required>
+                      <span class="custom-control-indicator"></span>
+                      <span class="custom-control-description">Female</span>
+                    </label>
+              </div>
+        </div>
+        <div class="form-row">
+            <div id="contactDiv" class="form-group col-md-6">
+                <label for="num" class="col-form-label">Contact</label>
+                <input type="text" class="form-control" id="num" placeholder="Contact Number i.e. (+923121234567)" required>
+            </div>
+            <div id="countryDiv" class="form-group col-md-6">
+                <label for="country" class="col-form-label">Country</label><br>
+                <input type="text" id="country" class="form-control"  size="30" placeholder="Select Your Country" required readonly>
+            </div>
+        </div>
+            <button class="btn btn-outline-info" id="submitBtn">Submit</button>
+            <button class="btn btn-outline-success" onclick="signIn()">Already Registered</button>
+    </div>
+    </div>
+    <script src="bootstrap/jquery.js"></script>
+    <script src="bootstrap/popper.js"></script>
+    <script src="bootstrap/bootstrap.js"></script>
+    <script src="datepicker/dist/datepicker.js"></script>    
+    <script src="main.js"></script>
+    <script src="countryselector/src/js/jquery.js"></script>
+    <script src="countryselector/build/js/countrySelect.min.js"></script>
+    <script>
+        $("#country").countrySelect({
+            defaultCountry: "pk",
+            // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+            preferredCountries: ['ca', 'gb', 'us']
+        });
+    </script>
+</body>
+
+</html>

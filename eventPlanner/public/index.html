@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcom to Event Planner</title>
+    <link rel="shortcut icon" type="image/x-icon" href="eventplanner.ico" />
+    <link rel="stylesheet" href="bootstrap/style.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="datepicker/dist/datepicker.css">
+    <link rel="stylesheet" href="countryselector/build/css/countrySelect.css">
+    
+    <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyC39ZspzHPxVBJk2SP3I0QcIkRBRkS2SO4",
+        authDomain: "event-planner-45142.firebaseapp.com",
+        databaseURL: "https://event-planner-45142.firebaseio.com",
+        projectId: "event-planner-45142",
+        storageBucket: "gs://event-planner-45142.appspot.com/",
+        messagingSenderId: "143825560504"
+      };
+      firebase.initializeApp(config);
+    </script>
+</head>
+<body>
+        <nav id="header" class="navbar fixed-top navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="#"><i class="fa fa-camera-retro" aria-hidden="true"></i> Event Planner</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul id="sign" class="nav navbar-nav ml-auto my-2">
+                      <li class="nav-item">
+                              <a class="nav-link" href="#" data-toggle="modal" data-target="#signin"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign In</a>
+                      </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#" data-toggle="modal" data-target="#signup"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign Up</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+              <div class="modal fade" id="signin" tabindex="-1" role="dialog" aria-labelledby="signInBox" aria-hidden="true">
+                    <div id="signInBody" class="container modal-dialog">
+                        <div class="centerDiv">
+                                <h2 class="centerDiv-heading"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign In</h2>
+                            <div class="form-row">
+                                <div id="signInEmailDiv" class="form-group col-md-12">
+                                    <label for="signInEmail" class="col-form-label"><i class="fa fa-envelope" aria-hidden="true"></i> E-mail</label>
+                                    <input type="email" class="form-control" id="signInEmail" placeholder="E-mail" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                    <div id="signInPassDiv" class="form-group col-md-12">
+                                <label for="signInPassword" class="col-form-label"><i class="fa fa-lock" aria-hidden="true"></i> Password</label>
+                                <input type="password" class="form-control" id="signInPassword" placeholder="Password" required>
+                            </div>
+                            </div>
+                            <button class="btn btn-success"  onclick="signIn()">SignIn</button>
+                            <a class="float-right" href="#" data-toggle="modal" data-dismiss="modal" data-target="#signup" style="color: white">Don't have Account?</a>
+                        </div>
+                    </div>
+                </div>
+                    
+              <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="signUpBox" aria-hidden="true">
+                    <div id="signUpBody" class="container modal-dialog modal-lg">
+                            <div class="centerDiv">
+                                <h2 class="centerDiv-heading"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign Up</h2>
+                                <div class="form-row">
+                                <div id="firstNameDiv" class="form-group col-md-6">
+                                    <label for="firstName" class="col-form-label" >First Name</label>
+                                    <input type="text" class="form-control" title="Enter Your First Name" id="firstName" placeholder="FirstName" required>
+                                </div>
+                                <div id="lastNameDiv" class="form-group col-md-6">
+                                    <label for="lastName" class="col-form-label" >Last Name</label>
+                                    <input type="text" class="form-control" title="Enter Your Last Name" id="lastName" placeholder="LastName" required>
+                                </div>
+                                </div>
+                            <div class="form-row">
+                                <div id="signUpEmailDiv" class="form-group col-md-6">
+                                    <label for="email" class="col-form-label" ><i class="fa fa-envelope" aria-hidden="true"></i> Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="E-mail" required>
+                                </div>
+                                <div id="signUpPassDiv" class="form-group col-md-6">
+                                    <label for="password" class="col-form-label" ><i class="fa fa-lock" aria-hidden="true"></i> Password</label>
+                                    <input type="password" class="form-control" id="password" placeholder="Password" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                            <div id="birthdayDiv" class="form-group col-md-6">
+                                            <label for="birthday" class="col-form-label"><i class="fa fa-birthday-cake" aria-hidden="true"></i> Date of Birth</label>
+                                            <input name="date" class="form-control" id="birthday" placeholder="Date of Birth" required readonly/>                        
+                                          </div>
+                                <div id="genderDiv" class="col-md-6 custom-controls-stacked d-block my-3">
+                                    <br>
+                                        <label class="custom-control custom-radio">
+                                          <input id="male" name="radio-stacked" value="Male" type="radio" class="custom-control-input" required>
+                                          <span class="custom-control-indicator"></span>
+                                          <span class="custom-control-description">Male</span>
+                                        </label>
+                                        <label class="custom-control custom-radio">
+                                          <input id="female" name="radio-stacked" value="Female" type="radio" class="custom-control-input" required>
+                                          <span class="custom-control-indicator"></span>
+                                          <span class="custom-control-description">Female</span>
+                                        </label>
+                                  </div>
+                            </div>
+                            <div class="form-row">
+                                <div id="contactDiv" class="form-group col-md-6">
+                                    <label for="num" class="col-form-label"><i class="fa fa-phone" aria-hidden="true"></i> Contact</label>
+                                    <input type="text" class="form-control" id="num" placeholder="Contact Number i.e. (+923121234567)" required>
+                                </div>
+                                <div id="countryDiv" class="form-group col-md-6">
+                                    <label for="country" class="col-form-label"><i class="fa fa-globe" aria-hidden="true"></i> Country</label><br>
+                                    <input type="text" id="country" class="form-control"  size="30" placeholder="Select Your Country" required readonly>
+                                </div>
+                            </div>
+                                <button class="btn btn-info" onclick="signUp()">Submit</button>
+                                <button class="btn btn-success" href="#" data-toggle="modal" data-dismiss="modal" data-target="#signin"><i class="fa fa-check" aria-hidden="true"></i> Already Registered</button>
+                        </div>
+                        </div>
+                  </div>
+    <div id="background" class="carousel slide" data-ride="carousel" data-pause=false style="margin-top:0%">
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100 bgImg" src="images/1.jpg" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 bgImg" src="images/2.jpg" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 bgImg" src="images/3.jpg" alt="Third slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 bgImg" src="images/4.jpg" alt="Fourth slide">
+          </div>
+          <div class="carousel-item">
+                <img class="d-block w-100 bgImg" src="images/5.jpg" alt="Fifth slide">
+              </div>
+        </div>
+        <div class="mainPitch text-center">
+                <div class="container">
+                  <div class="row">
+                    <div class="m-xl-auto">
+                      <h1>Welcome to Event Planner</h1>
+                      <h3>Here you can create, plan or find multiple events of your choice!</h3>
+                    </div>
+                  </div>
+                </div>
+          </div>
+          
+      </div>
+
+    <script src="bootstrap/jquery.js"></script>
+    <script src="bootstrap/popper.js"></script>
+    <script src="bootstrap/bootstrap.js"></script>
+    <script src="datepicker/dist/datepicker.js"></script>    
+    <script src="main.js"></script>
+    <script src="countryselector/src/js/jquery.js"></script>
+    <script src="countryselector/build/js/countrySelect.js"></script>
+    <script>
+
+        $("#country").countrySelect({
+            defaultCountry: "pk",
+            preferredCountries: ['ca', 'gb', 'us']
+        });
+        function checkScroll(){
+    var startY = $('.navbar').height() * 2; //The point where the navbar changes in px
+
+    if($(window).scrollTop() > startY){
+        $('.navbar').addClass("scrolled");
+    }else{
+        $('.navbar').removeClass("scrolled");
+    }
+}
+
+if($('.navbar').length > 0){
+    $(window).on("scroll load resize", function(){
+        checkScroll();
+    });
+}
+$(window).load(function() {    
+
+        var theWindow        = $(window),
+            $bg              = $(".bgImg"),
+            aspectRatio      = $bg.width() / $bg.height();
+
+        function resizeBg() {
+
+                if ( (theWindow.width() / theWindow.height()) < aspectRatio ) {
+                    $bg
+                        .removeClass()
+                        .addClass('bgheight');
+                } else {
+                    $bg
+                        .removeClass()
+                        .addClass('bgwidth');
+                }
+
+        }
+
+        theWindow.resize(resizeBg).trigger("resize");
+
+});
+    </script>
+</body>
+</html>
