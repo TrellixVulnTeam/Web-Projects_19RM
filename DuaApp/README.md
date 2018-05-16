@@ -1,4 +1,5 @@
-Todo App using ReactJS and Firebase database.
+Dua Application where the user can update a status and comment on every other status availble online.
+Login/Signup required.
 
 Link:
-https://test-f23d8.firebaseapp.com/
+https://authentication-1083e.firebaseapp.com/
